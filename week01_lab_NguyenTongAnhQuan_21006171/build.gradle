@@ -11,7 +11,7 @@ repositories {
 }
 
 ext {
-    junitVersion = '5.10.2'
+    junitVersion = '5.11.0-M2'
 }
 
 sourceCompatibility = '17'
@@ -22,15 +22,13 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-    compileOnly('jakarta.servlet:jakarta.servlet-api:6.0.0')
-    implementation('org.hibernate:hibernate-core:6.4.5.Final')
+    compileOnly('jakarta.servlet:jakarta.servlet-api:6.1.0')
+    implementation('org.eclipse.persistence:org.eclipse.persistence.jpa:4.0.2')
+    implementation('org.hibernate:hibernate-core:7.0.0.Alpha3')
     implementation('org.glassfish.jaxb:jaxb-runtime:4.0.5')
 
     // https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client
     implementation 'org.mariadb.jdbc:mariadb-java-client:3.4.1'
-
-    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.0'
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")

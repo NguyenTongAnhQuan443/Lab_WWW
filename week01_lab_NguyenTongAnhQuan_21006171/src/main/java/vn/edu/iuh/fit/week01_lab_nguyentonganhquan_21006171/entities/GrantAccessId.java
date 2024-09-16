@@ -1,20 +1,20 @@
 package vn.edu.iuh.fit.week01_lab_nguyentonganhquan_21006171.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
-import org.hibernate.Hibernate;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-@Embeddable
 public class GrantAccessId implements Serializable {
-    private static final long serialVersionUID = 43160223300999969L;
-    @Column(name = "role_id", nullable = false, length = 50)
-    private String roleId;
+    public String roleId;
 
-    @Column(name = "account_id", nullable = false, length = 50)
-    private String accountId;
+    public String accountId;
+
+    public GrantAccessId() {
+    }
+
+    public GrantAccessId(String roleId, String accountId) {
+        this.roleId = roleId;
+        this.accountId = accountId;
+    }
 
     public String getRoleId() {
         return roleId;
@@ -35,15 +35,14 @@ public class GrantAccessId implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         GrantAccessId entity = (GrantAccessId) o;
-        return Objects.equals(this.accountId, entity.accountId) &&
-                Objects.equals(this.roleId, entity.roleId);
+        return Objects.equals(this.roleId, entity.roleId) &&
+                Objects.equals(this.accountId, entity.accountId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accountId, roleId);
+        return Objects.hash(roleId, accountId);
     }
-
 }

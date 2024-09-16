@@ -1,22 +1,25 @@
 package vn.edu.iuh.fit.week01_lab_nguyentonganhquan_21006171.connectDB;
 
+import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 public class Connection {
-    private static Connection instance;
-    private EntityManagerFactory entityManagerFactory;
+    private final EntityManager entityManager;
+    private static Connection connection;
 
-    public Connection(){
-        entityManagerFactory = Persistence.createEntityManagerFactory("default");
+    private Connection() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
+        entityManager = emf.createEntityManager();
     }
+
+    public EntityManager getEntityManager() {
+        return entityManager;
+    }
+
     public static Connection getInstance() {
-        if(instance == null){
-            instance = new Connection();
-        }
-        return instance;
-    }
-    public EntityManagerFactory getEntityManagerFactory() {
-        return entityManagerFactory;
+        if (connection == null)
+            connection = new Connection();
+        return connection;
     }
 }

@@ -2,6 +2,16 @@
 <project version="4">
   <component name="JpaBuddyIdeaProjectConfig" reUseTableSchema="true">
     <option name="reLastEntityCreationPackage" value="src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/entities" />
-    <option name="reverseEngineeringLastDbConnectionId" value="b77a5c19-cb5b-4ee1-9b47-77769bf06cf9" />
+    <option name="reverseEngineeringLastDbConnectionId" value="c0828f6c-8f22-4fa6-943d-f2dadefe841d" />
+  </component>
+  <component name="JpaPluginProjectSettings" reExcludeTablePrefixes="" reExcludeColumnPrefixes="" reExcludeTableSuffixes="" reExcludeColumnSuffixes="">
+    <option name="entityNameTemplate" />
+    <option name="generateJpaOnGetter" value="true" />
+    <option name="generateSerialVersionUID" value="true" />
+    <option name="isLombokToString" value="true" />
+    <option name="isLombokAllArgsConstructor" value="true" />
+    <option name="isLombokNoArgsConstructor" value="true" />
+    <option name="reUseLazyOnToOneAssociations" value="false" />
+    <option name="scaffoldingLanguage" />
   </component>
 </project>

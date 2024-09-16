@@ -4,33 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="415c6082-46dc-4dbc-97cd-46a261e1a79e" name="Changes" comment="">
+    <list default="true" id="15e97e1c-8f9e-4f09-98f5-5c81dfd6249e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/jpa.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/beans/Utils.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/connectDB/Connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/dtos/AccountDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/dtos/GrantAccessDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/dtos/GrantAccessIdDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/dtos/LogDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/dtos/RoleDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/controllers/AccountController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/entities/Account.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/entities/GrantAccess.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/entities/GrantAccessId.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/entities/Log.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/entities/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/entities/Status.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/respositories/CRUDRespository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/respositories/impl/AccountRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/respositories/impl/GrandAccessRespositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/respositories/impl/LogRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/respositories/impl/RoloRespositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/sevices/RoleSevice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/testing/TestAccountRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/respositories/Impl/AccountRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/respositories/Impl/GrantAccessRespository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/respositories/Impl/LogRespository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/services/AccountServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/services/GrantAccessServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/services/LogServices.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/changePassword.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/dashboard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/notFoundPage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,73 +57,76 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="com.intellij.jpb.JpaEntity" />
         <option value="com.intellij.jpb.NewClass" />
         <option value="Interface" />
+        <option value="package-info" />
+        <option value="Enum" />
+        <option value="com.intellij.jpb.JpaEntity" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/entities/GrantAccess.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
-  <component name="ProjectId" id="2lt2rZLAIISAMXSUcCzYKZ8hw3R" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2m0WXJbMApKc2CuUbjJnGxuXWcM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.week01_lab_NguyenTongAnhQuan_21006171 [:vn.edu.iuh.fit.week01_lab_nguyentonganhquan_21006171.testing.TestAccountRepository.main()].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ADMIN/Downloads/www-week-01",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build week01_lab_NguyenTongAnhQuan_21006171.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.dashboard.jsp.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.profile.jsp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.11.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ADMIN/Downloads/week01_lab_HaAnhThao_20001575-master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
-  <component name="RunManager" selected="Application.TestAccountRepository">
-    <configuration name="TestAccountRepository" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="vn.edu.iuh.fit.week01_lab_nguyentonganhquan_21006171.testing.TestAccountRepository" />
-      <module name="week01_lab_NguyenTongAnhQuan_21006171.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="vn.edu.iuh.fit.week01_lab_nguyentonganhquan_21006171.testing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\NguyenQuan_Code\Code_Nam_4\HK1\WWW\Lab_WWW\week01_lab_NguyenTongAnhQuan_21006171\src\main\java\vn\edu\iuh\fit\week01_lab_nguyentonganhquan_21006171\entities" />
+      <recent name="D:\NguyenQuan_Code\Code_Nam_4\HK1\WWW\Lab_WWW\week01_lab_NguyenTongAnhQuan_21006171\src\main\webapp\view" />
+    </key>
+  </component>
+  <component name="RunManager">
     <configuration name="Tomcat 10.1.11" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.11" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
         <artifact name="Gradle : vn.edu.iuh.fit : week01_lab_NguyenTongAnhQuan_21006171-1.0-SNAPSHOT.war">
           <settings>
@@ -119,12 +134,78 @@
           </settings>
         </artifact>
       </deployment>
-      <server-settings />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="7db53299-515a-4e2b-a984-c1a69c836f17" />
+        <option name="DEPLOY_TOMCAT_APPS" value="true" />
+      </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="55510" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
@@ -132,11 +213,6 @@
         </option>
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.TestAccountRepository" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -149,13 +225,21 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="415c6082-46dc-4dbc-97cd-46a261e1a79e" name="Changes" comment="" />
-      <created>1725985254834</created>
+      <changelist id="15e97e1c-8f9e-4f09-98f5-5c81dfd6249e" name="Changes" comment="" />
+      <created>1726214012930</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1725985254834</updated>
-      <workItem from="1725985255981" duration="739000" />
-      <workItem from="1726021206773" duration="14822000" />
+      <updated>1726214012930</updated>
+      <workItem from="1726214013856" duration="21625000" />
+      <workItem from="1726249051453" duration="96000" />
+      <workItem from="1726249161653" duration="903000" />
+      <workItem from="1726250135107" duration="300000" />
+      <workItem from="1726277648928" duration="9952000" />
+      <workItem from="1726301454749" duration="3689000" />
+      <workItem from="1726313091507" duration="365000" />
+      <workItem from="1726360849548" duration="2396000" />
+      <workItem from="1726396405109" duration="20138000" />
+      <workItem from="1726452645276" duration="2278000" />
     </task>
     <servers />
   </component>

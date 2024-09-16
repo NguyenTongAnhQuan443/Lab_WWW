@@ -1,27 +1,26 @@
 package vn.edu.iuh.fit.week01_lab_nguyentonganhquan_21006171.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+import java.io.Serializable;
 
 @Entity
 @Table(name = "role", schema = "www_week1")
-@NamedQueries({
-        @NamedQuery(name = "Role.findAll", query = "select r from Role r"),
-        @NamedQuery(name = "Role.deleteByRoleId", query = "delete from Role r where r.roleId = :roleId")
-})
-public class Role {
-    @Id
-    @Column(name = "role_id", nullable = false, length = 50)
+public class Role implements Serializable {
+    private static final long serialVersionUID = 2781055380960826630L;
     private String roleId;
 
-    @Column(name = "role_name", nullable = false, length = 50)
     private String roleName;
 
-    @Column(name = "description", length = 50)
     private String description;
 
-    @Column(name = "status", nullable = false)
     private Byte status;
 
+    @Id
+    @Column(name = "role_id", nullable = false, length = 50)
     public String getRoleId() {
         return roleId;
     }
@@ -30,6 +29,7 @@ public class Role {
         this.roleId = roleId;
     }
 
+    @Column(name = "role_name", nullable = false, length = 50)
     public String getRoleName() {
         return roleName;
     }
@@ -38,6 +38,7 @@ public class Role {
         this.roleName = roleName;
     }
 
+    @Column(name = "description", length = 50)
     public String getDescription() {
         return description;
     }
@@ -46,6 +47,7 @@ public class Role {
         this.description = description;
     }
 
+    @Column(name = "status", nullable = false)
     public Byte getStatus() {
         return status;
     }
