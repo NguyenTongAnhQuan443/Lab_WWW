@@ -4,25 +4,17 @@
     String errorMessage = request.getParameter("error");
 %>
 
-<%
-    if (successMessage != null) {
-%>
+<% if (successMessage != null && successMessage.equals("updateSuccess")) { %>
 <div class="alert alert-success" role="alert">
     Thay đổi mật khẩu thành công!
 </div>
-<%
-    }
-%>
+<% } %>
 
-<%
-    if (errorMessage != null) {
-%>
+<% if (errorMessage != null && (errorMessage.equals("invalidPassword") || errorMessage.equals("updateFailed"))) { %>
 <div class="alert alert-danger" role="alert">
     Thay đổi mật khẩu thất bại. Vui lòng thử lại.
 </div>
-<%
-    }
-%>
+<% } %>
 <!DOCTYPE html>
 <html lang="en">
 <head>

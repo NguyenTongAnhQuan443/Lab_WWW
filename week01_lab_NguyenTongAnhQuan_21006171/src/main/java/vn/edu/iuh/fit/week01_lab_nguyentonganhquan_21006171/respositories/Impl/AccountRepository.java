@@ -22,7 +22,6 @@ public class AccountRepository implements CRUDRespository<Account, String> {
         } catch (Exception e) {
             e.printStackTrace();
             entityManager.getTransaction().rollback();
-            ;
             return false;
         }
     }
@@ -68,20 +67,6 @@ public class AccountRepository implements CRUDRespository<Account, String> {
     public List<Account> findAll(Class<Account> entityClass) {
         return entityManager.createNamedQuery("Account.findAll", Account.class).getResultList();
     }
-
-//    public Optional<Account> isLogin(String username, String password) {
-//        try {
-//            Account account = entityManager.createNamedQuery("Account.findByEmailOrPhoneAndPassword", Account.class)
-//                    .setParameter("email", username)
-//                    .setParameter("phone", username)
-//                    .setParameter("password", password)
-//                    .getSingleResult();
-//            return Optional.of(account);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return Optional.empty();
-//    }
 
     public Account isLogin(String username, String password) {
         Account account;

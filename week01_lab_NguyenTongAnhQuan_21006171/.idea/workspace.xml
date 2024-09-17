@@ -22,6 +22,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/beans/Utils.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/connectDB/Connection.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/controllers/AccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/controllers/RoleController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/entities/Account.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/entities/GrantAccess.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/entities/GrantAccessId.java" afterDir="false" />
@@ -32,18 +33,21 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/respositories/Impl/AccountRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/respositories/Impl/GrantAccessRespository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/respositories/Impl/LogRespository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/respositories/Impl/RoleRespository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/services/AccountServices.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/services/GrantAccessServices.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/services/LogServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/iuh/fit/week01_lab_nguyentonganhquan_21006171/services/RoleServices.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/addAccount.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/view/changePassword.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/view/dashboard.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/view/login.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/view/notFoundPage.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/view/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Database_Lab/script_db(week1).sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Database_Lab/script_db(week1).sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/roleManager.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +65,10 @@
         <option value="com.intellij.jpb.NewClass" />
         <option value="Interface" />
         <option value="package-info" />
-        <option value="Enum" />
         <option value="com.intellij.jpb.JpaEntity" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -110,7 +114,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -241,11 +245,15 @@
       <workItem from="1726360849548" duration="2396000" />
       <workItem from="1726396405109" duration="20138000" />
       <workItem from="1726452645276" duration="4919000" />
-      <workItem from="1726540530553" duration="5201000" />
+      <workItem from="1726540530553" duration="23381000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

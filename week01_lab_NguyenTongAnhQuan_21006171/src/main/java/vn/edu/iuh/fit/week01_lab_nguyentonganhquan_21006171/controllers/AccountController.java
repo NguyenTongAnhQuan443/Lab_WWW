@@ -22,6 +22,7 @@ public class AccountController extends HttpServlet {
     private static final String PATH_VIEW_PROFILE = "view/profile.jsp";
     private static final String PATH_VIEW_DASHBOARD = "view/dashboard.jsp";
     private static final String PATH_VIEW_CHANGE_PASSWORD = "view/changePassword.jsp";
+    private static final String PATH_VIEW_ADD_ACCOUNT = "view/addAccount.jsp";
 
     private static String ROLE_ADMIN = "admin";
     private static String ROLE_USER = "user";
@@ -65,8 +66,40 @@ public class AccountController extends HttpServlet {
             case "deleteaccount":
                 handleDeleteAccount(req, resp);
                 break;
+            case "addaccount":
+                handleAddAccount(req, resp);
+                break;
             default:
                 break;
+        }
+    }
+
+    private void handleAddAccount(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        HttpSession session = req.getSession(true);
+
+        String accountId = req.getParameter("accountId");
+        String fullName = req.getParameter("fullName");
+        String email = req.getParameter("email");
+        String phone = req.getParameter("phone");
+        String password = req.getParameter("password");
+        String status = req.getParameter("status");
+        int statusInt ;
+        if(status != null && status.equals("on")){
+            statusInt = 1;
+        }else {
+            statusInt = 0;
+        }
+        Account account = new Account(accountId, fullName, password, email, phone, (byte) statusInt);
+
+        boolean result = accountServices.addAccount(account);
+
+        if(result){
+            session.setAttribute("statusAdd", "success");
+            session.setAttribute("listAccount", accountServices.findAllAccount());
+            resp.sendRedirect(req.getContextPath() +"/"+ PATH_VIEW_DASHBOARD);
+        }else{
+            session.setAttribute("statusAdd", "failed");
+            resp.sendRedirect(req.getContextPath() +"/"+ PATH_VIEW_ADD_ACCOUNT);
         }
     }
 
@@ -165,6 +198,7 @@ public class AccountController extends HttpServlet {
 
     private void handleChangePassword(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession httpSession = req.getSession(true);
+
         Account account = (Account) httpSession.getAttribute("account");
 
         String oldPassword = req.getParameter("currentPassword");

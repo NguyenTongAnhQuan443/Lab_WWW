@@ -12,8 +12,8 @@ public class AccountServices {
         accountRepository = new AccountRepository();
     }
 
-    public void addAccount(Account account) {
-        accountRepository.add(account);
+    public boolean addAccount(Account account) {
+        return accountRepository.add(account);
     }
 
     public boolean deleteAccount(String id) {
@@ -31,14 +31,6 @@ public class AccountServices {
     public List<Account> findAllAccount() {
         return accountRepository.findAll(Account.class);
     }
-
-
-//    method is login
-//    public Optional<Account> isLogin(String username, String password) {
-//        if(username == null || password == null || username.isEmpty() || password.isEmpty())
-//            return Optional.empty();
-//        return accountRepository.isLogin(username, password);
-//    }
 
     public Account isLogin(String userName, String password) {
         return accountRepository.isLogin(userName, password);
