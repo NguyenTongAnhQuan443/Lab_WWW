@@ -2,6 +2,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     Account account = (Account) session.getAttribute("account");
+    String path = request.getContextPath();
+    if(account == null){
+        response.sendRedirect(path + "/index.jsp");
+        return;
+    }
 
 %>
 <%
@@ -103,7 +108,7 @@
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb" class="main-breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                 <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
                 <li class="breadcrumb-item active" aria-current="page">User Profile</li>
             </ol>

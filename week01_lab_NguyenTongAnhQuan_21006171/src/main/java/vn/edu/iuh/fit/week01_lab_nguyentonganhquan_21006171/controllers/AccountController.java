@@ -56,10 +56,14 @@ public class AccountController extends HttpServlet {
                 handleLogout(req, resp);
                 break;
             case "update":
+//                Update Account
                 handleUpdate(req, resp);
                 break;
             case "changepassword":
                 handleChangePassword(req, resp);
+                break;
+            case "deleteaccount":
+                handleDeleteAccount(req, resp);
                 break;
             default:
                 break;
@@ -96,8 +100,15 @@ public class AccountController extends HttpServlet {
             httpSession.setAttribute("log", log);
             logServices.add(log);
 
-            String destination = isAdmin ? PATH_VIEW_DASHBOARD : PATH_VIEW_PROFILE;
-            resp.sendRedirect(destination);
+            String destination = "";
+            if (isAdmin) {
+                httpSession.setAttribute("listAccount", accountServices.findAll());
+                destination = PATH_VIEW_DASHBOARD;
+                resp.sendRedirect(destination);
+            } else {
+                destination = PATH_VIEW_PROFILE;
+                resp.sendRedirect(destination);
+            }
         }
     }
 
@@ -116,7 +127,6 @@ public class AccountController extends HttpServlet {
     }
 
     private void handleUpdate(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        System.out.println("Update");
         String accountId = req.getParameter("accountId");
         String fullName = req.getParameter("fullName");
         String email = req.getParameter("email");
@@ -129,14 +139,28 @@ public class AccountController extends HttpServlet {
         HttpSession session = req.getSession(true);
         boolean result = accountServices.updateAccount(account);
         if (!result) {
-            resp.sendRedirect(PATH_VIEW_PROFILE + "?error=updateFailed");
-            return;
+            // Kiểm tra context để xác định chuyển hướng về trang nào
+            if (!session.getAttribute("context").equals("dashboardContext")) {
+                resp.sendRedirect(PATH_VIEW_PROFILE + "?error=updateFailed");
+                return;
+            } else {
+                session.setAttribute("listAccount", accountServices.findAllAccount());
+                resp.sendRedirect(PATH_VIEW_DASHBOARD);
+                return;
+            }
         }
 
         // refresh data - new session - send attribute to view
         HttpSession session1 = req.getSession(true);
         session1.setAttribute("account", account);
-        resp.sendRedirect(PATH_VIEW_PROFILE + "?success=updateSuccess");
+
+        // Kiểm tra context để xác định chuyển hướng về trang nào
+        if (!session.getAttribute("context").equals("dashboardContext")) {
+            resp.sendRedirect(PATH_VIEW_PROFILE + "?success=updateSuccess");
+        } else {
+            session.setAttribute("listAccount", accountServices.findAllAccount());
+            resp.sendRedirect(PATH_VIEW_DASHBOARD);
+        }
     }
 
     private void handleChangePassword(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -148,20 +172,38 @@ public class AccountController extends HttpServlet {
 
         if (!account.getPassword().equals(oldPassword)) {
             resp.sendRedirect(PATH_VIEW_CHANGE_PASSWORD + "?error=invalidPassword");
-        }else{
+        } else {
             Account accountTmp = new Account(account.getAccountId(), account.getFullName(), newPassword, account.getEmail(), account.getPhone(), account.getStatus());
 
             boolean result = accountServices.updateAccount(accountTmp);
 
             if (!result) {
                 resp.sendRedirect(PATH_VIEW_CHANGE_PASSWORD + "?error=updateFailed");
-            }else{
+            } else {
                 httpSession.setAttribute("account", accountTmp); // update new account in session
                 resp.sendRedirect(PATH_VIEW_CHANGE_PASSWORD + "?success=updateSuccess");
                 req.setAttribute("account", accountTmp);
             }
-
-
         }
     }
+
+    private void handleDeleteAccount(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        String accountID = req.getParameter("accountId");
+        boolean result = accountServices.deleteAccount(accountID);
+
+        HttpSession session = req.getSession(true);
+        if (result) {
+            req.setAttribute("message", "Delete account success");
+            session.setAttribute("listAccount", accountServices.findAllAccount());
+            resp.sendRedirect(PATH_VIEW_DASHBOARD);
+        } else {
+            req.setAttribute("message", "Delete account failed");
+//            resp.sendRedirect(PATH_VIEW_DASHBOARD);
+            System.out.println("Delete account failed");
+        }
+
+
+//        resp.sendRedirect(req.getContextPath() + PATH_VIEW_DASHBOARD);
+    }
+
 }

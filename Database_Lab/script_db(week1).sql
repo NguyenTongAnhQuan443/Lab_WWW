@@ -1,7 +1,7 @@
 -- Dumping database structure for mydb
-CREATE DATABASE IF NOT EXISTS `WWW_week1` /*!40100 DEFAULT CHARACTER SET latin1 
+CREATE DATABASE IF NOT EXISTS `www_week1` /*!40100 DEFAULT CHARACTER SET latin1 
 COLLATE latin1_swedish_ci */;
-USE `WWW_week1`;
+USE `www_week1`;
 -- Dumping structure for table mydb.account
 CREATE TABLE IF NOT EXISTS `account` (
 `account_id` varchar(50) NOT NULL,

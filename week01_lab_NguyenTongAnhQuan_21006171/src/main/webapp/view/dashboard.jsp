@@ -1,4 +1,16 @@
+<%@ page import="vn.edu.iuh.fit.week01_lab_nguyentonganhquan_21006171.entities.Account" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    Account account = (Account) session.getAttribute("account");
+    String path = request.getContextPath();
+    if (account == null) {
+        response.sendRedirect(path + "/index.jsp");
+        return;
+    }
+
+    List<Account> accountList = session.getAttribute("listAccount") != null ? (List<Account>) session.getAttribute("listAccount") : null;
+%>
 <html>
 <head>
     <title>Dashboard</title>
@@ -13,7 +25,6 @@
         }
 
         footer {
-
             margin-top: 20px;
             padding-top: 20px;
         }
@@ -31,6 +42,35 @@
             right: 0px;
         }
     </style>
+    <script>
+        // Hàm để chuyển các ô trong bảng thành input để chỉnh sửa
+        function enableEdit(rowId) {
+            var row = document.getElementById("row_" + rowId);
+            row.querySelectorAll(".view-mode").forEach(function (el) {
+                el.style.display = "none";
+            });
+            row.querySelectorAll(".edit-mode").forEach(function (el) {
+                el.style.display = "block";
+            });
+            row.querySelector(".edit-button").style.display = "none";
+            row.querySelector(".save-button").style.display = "inline-block";
+            row.querySelector(".cancel-button").style.display = "inline-block";
+        }
+
+        // Hàm để hủy chỉnh sửa và quay lại chế độ xem
+        function cancelEdit(rowId) {
+            var row = document.getElementById("row_" + rowId);
+            row.querySelectorAll(".view-mode").forEach(function (el) {
+                el.style.display = "block";
+            });
+            row.querySelectorAll(".edit-mode").forEach(function (el) {
+                el.style.display = "none";
+            });
+            row.querySelector(".edit-button").style.display = "inline-block";
+            row.querySelector(".save-button").style.display = "none";
+            row.querySelector(".cancel-button").style.display = "none";
+        }
+    </script>
 </head>
 <body>
 <header>
@@ -47,114 +87,105 @@
                             class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#">Features</a>
                 </div>
+                <div class="navbar-nav ml-auto">
+                    <h4><%=account.getFullName().toString()%>
+                    </h4>
+                </div>
+                <!-- Nút Log out nằm ở bên phải -->
+                <div class="navbar-nav ml-auto">
+                    <form action="${pageContext.request.contextPath}/AccountController?action=logout" method="post">
+                        <button type="submit" class="btn btn-outline-danger">Log out</button>
+                    </form>
+                </div>
             </div>
         </nav>
     </div>
 </header>
-<!---->
+
 <main>
     <div class="container my-5">
         <div class="card-body text-center">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <h4 class="card-title">Account Manager</h4>
         </div>
         <div class="card">
-            <button id="add__new__list" type="button" class="btn btn-success position-absolute" data-toggle="modal"
-                    data-target=".bd-example-modal-lg"><i class="fas fa-plus"></i> Add a new List
-            </button>
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">List Name</th>
-                    <th scope="col">Deadline</th>
-                    <th scope="col">Edit List</th>
-                    <th scope="col">list info</th>
+                    <th scope="col">AccountId</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
+                <% for (Account a : accountList) { %>
+                <tr id="row_<%= a.getAccountId() %>">
+                    <form action="${pageContext.request.contextPath}/AccountController?action=update" method="post">
+                        <td>
+                            <%= a.getAccountId() %>
+                            <input type="hidden" name="accountId" value="<%= a.getAccountId() %>">
+                        </td>
+                        <td>
+                            <span class="view-mode"><%= a.getFullName() %></span>
+                            <input type="text" class="form-control edit-mode" name="fullName"
+                                   value="<%= a.getFullName() %>" style="display: none;">
+                        </td>
+                        <td>
+                            <span class="view-mode"><%= a.getEmail() %></span>
+                            <input type="email" class="form-control edit-mode" name="email" value="<%= a.getEmail() %>"
+                                   style="display: none;">
+                        </td>
+                        <td>
+                            <span class="view-mode"><%= a.getPhone() %></span>
+                            <input type="text" class="form-control edit-mode" name="phone" value="<%= a.getPhone() %>"
+                                   style="display: none;">
+                        </td>
+                        <td>
+                            <span class="view-mode"><%= a.getStatus() %></span>
+                            <input type="text" class="form-control edit-mode" name="password"
+                                   value="<%= a.getPassword() %>" style="display: none;">
+                            <input type="text" class="form-control edit-mode" name="status" value="<%= a.getStatus() %>"
+                                   style="display: none;">
+                        </td>
+                        <td>
+                            <!-- Nút Edit để chuyển sang chế độ chỉnh sửa -->
+                            <button type="button" class="btn btn-sm btn-primary edit-button"
+                                    onclick="enableEdit('<%= a.getAccountId() %>')">
+                                <i class="far fa-edit"></i> Edit
+                            </button>
+                            <!-- Nút Save và Cancel xuất hiện khi ở chế độ chỉnh sửa -->
+                            <%
+                                session.setAttribute("context", "dashboardContext");
+                            %>
+                            <button type="submit" class="btn btn-sm btn-success save-button" style="display:none;"><i
+                                    class="fas fa-save"></i> Save
+                            </button>
+                            <button type="button" class="btn btn-sm btn-secondary cancel-button" style="display:none;"
+                                    onclick="cancelEdit('<%= a.getAccountId() %>')"><i class="fas fa-times"></i> Cancel
+                            </button>
+                        </td>
+                    </form>
                     <td>
-                        <a class="btn btn-sm btn-primary" href="#"><i class="far fa-edit"></i> edit</a>
-                        <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a>
+                        <!-- Nút Delete để xóa tài khoản -->
+                        <form action="${pageContext.request.contextPath}/AccountController?action=deleteaccount"
+                              method="post" style="display:inline;">
+                            <input type="hidden" name="accountId" value="<%= a.getAccountId() %>">
+                            <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i> Delete
+                            </button>
+                        </form>
                     </td>
-                    <td><a class="btn btn-sm btn-info" href="#"><i class="fas fa-info-circle"></i> Details</a></td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>
-                        <a class="btn btn-sm btn-primary" href="#"><i class="far fa-edit"></i> edit</a>
-                        <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a>
-                    </td>
-                    <td><a class="btn btn-sm btn-info" href="#"><i class="fas fa-info-circle"></i> Details</a></td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>
-                        <a class="btn btn-sm btn-primary" href="#"><i class="far fa-edit"></i> edit</a>
-                        <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a>
-                    </td>
-                    <td><a class="btn btn-sm btn-info" href="#"><i class="fas fa-info-circle"></i> Details</a></td>
-                </tr>
+                <% } %>
                 </tbody>
             </table>
         </div>
-        <!-- Large modal -->
-
-
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Special title treatment</h4>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div class=" card col-8 offset-2 my-2 p-3">
-                        <form>
-                            <div class="form-group">
-                                <label for="listname">List name</label>
-                                <input type="text" class="form-control" name="listname" id="listname"
-                                       placeholder="Enter your listname">
-                            </div>
-                            <div class="form-group">
-                                <label for="datepicker">Deadline</label>
-                                <input type="text" class="form-control" name="datepicker" id="datepicker"
-                                       placeholder="Pick up a date">
-                            </div>
-                            <div class="form-group">
-                                <label for="datepicker">Add a list item</label>
-                                <div class="input-group">
-
-                                    <input type="text" class="form-control" placeholder="Add an item"
-                                           aria-label="Search for...">
-                                    <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="button">Go!</button>
-                  </span>
-                                </div>
-                            </div>
-                            <div class="form-group text-center">
-                                <button type="submit" class="btn btn-block btn-primary">Sign in</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </main>
-<!---->
 
-<!---->
 <footer>
     <div class="container bg-info p-5">
-
     </div>
 </footer>
 </body>

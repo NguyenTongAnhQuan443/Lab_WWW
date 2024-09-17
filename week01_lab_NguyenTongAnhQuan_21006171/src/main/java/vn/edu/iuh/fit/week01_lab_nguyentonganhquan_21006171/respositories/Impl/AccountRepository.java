@@ -29,21 +29,19 @@ public class AccountRepository implements CRUDRespository<Account, String> {
 
     @Override
     public boolean deleteByID(Class<Account> entityClass, String id) {
-        return false;
-//        try {
-//            entityManager.getTransaction().begin();
-//            int result = entityManager.createNamedQuery("Account.deleteByAccountId", Account.class)
-//                    .setParameter("accountId", s)
-//                    .executeUpdate();
-//            entityManager.getTransaction().commit();
-//            entityManager.clear();
-//            return result > 0;
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            entityManager.getTransaction().rollback();
-//            ;
-//            return false;
-//        }
+        try {
+            entityManager.getTransaction().begin();
+            int result = entityManager.createNamedQuery("Account.deleteByAccountId")
+                    .setParameter("accountId", id)
+                    .executeUpdate();
+            entityManager.getTransaction().commit();
+            entityManager.clear();
+            return result > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+            return false;
+        }
     }
 
     @Override
@@ -68,8 +66,7 @@ public class AccountRepository implements CRUDRespository<Account, String> {
 
     @Override
     public List<Account> findAll(Class<Account> entityClass) {
-//        return entityManager.createNamedQuery("Account.findAll", Account.class).getResultList();
-        return null;
+        return entityManager.createNamedQuery("Account.findAll", Account.class).getResultList();
     }
 
 //    public Optional<Account> isLogin(String username, String password) {

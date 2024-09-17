@@ -9,6 +9,8 @@ import java.io.Serializable;
 @Table(name = "account", schema = "www_week1")
 @NamedQueries({
         @NamedQuery(name = "Account.findByEmailOrPhoneAndPassword", query = "select a from Account a where (a.email = :email or a.phone = :phone) and a.password = :password"),
+        @NamedQuery(name = "Account.findAll", query = "select a from Account a"),
+        @NamedQuery(name = "Account.deleteByAccountId", query = "delete from Account a where a.accountId = :accountId")
 })
 public class Account implements Serializable {
     private static final long serialVersionUID = -4975585565028447667L;

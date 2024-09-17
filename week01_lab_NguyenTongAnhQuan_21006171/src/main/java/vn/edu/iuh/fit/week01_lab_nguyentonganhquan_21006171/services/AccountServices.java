@@ -1,4 +1,5 @@
 package vn.edu.iuh.fit.week01_lab_nguyentonganhquan_21006171.services;
+
 import vn.edu.iuh.fit.week01_lab_nguyentonganhquan_21006171.entities.Account;
 import vn.edu.iuh.fit.week01_lab_nguyentonganhquan_21006171.respositories.Impl.AccountRepository;
 
@@ -15,8 +16,8 @@ public class AccountServices {
         accountRepository.add(account);
     }
 
-    public void deleteAccount(String id) {
-        accountRepository.deleteByID(Account.class, id);
+    public boolean deleteAccount(String id) {
+        return accountRepository.deleteByID(Account.class, id);
     }
 
     public boolean updateAccount(Account account) {
@@ -41,5 +42,9 @@ public class AccountServices {
 
     public Account isLogin(String userName, String password) {
         return accountRepository.isLogin(userName, password);
+    }
+
+    public Object findAll() {
+        return accountRepository.findAll(Account.class);
     }
 }
