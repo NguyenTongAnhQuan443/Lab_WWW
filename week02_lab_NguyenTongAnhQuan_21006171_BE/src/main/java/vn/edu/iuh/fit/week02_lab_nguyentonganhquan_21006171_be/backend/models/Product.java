@@ -1,6 +1,7 @@
 package vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models;
 
 import jakarta.persistence.*;
+import lombok.*;
 import vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.converts.ProductStatusConvert;
 import vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.enums.ProductStatus;
 
@@ -34,15 +35,15 @@ public class Product {
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     private List<Order_Detail> orderDetails;
 
-    public Long getProduct_id() {
-        return product_id;
-    }
-
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     private List<Product_Price> productPrice;
 
-//    @OneToMany(mappedBy = "product")
-//    private List<Product_Image> productImages;
+    @OneToMany(mappedBy = "product")
+    private List<Product_Image> productImages;
+
+    public Long getProduct_id() {
+        return product_id;
+    }
 
     public void setProduct_id(Long product_id) {
         this.product_id = product_id;
@@ -88,17 +89,40 @@ public class Product {
         this.status = status;
     }
 
-    public Product(Long product_id, String name, String description, String unit, String manufacturer_name, ProductStatus status) {
+    public List<Order_Detail> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(List<Order_Detail> orderDetails) {
+        this.orderDetails = orderDetails;
+    }
+
+    public List<Product_Price> getProductPrice() {
+        return productPrice;
+    }
+
+    public void setProductPrice(List<Product_Price> productPrice) {
+        this.productPrice = productPrice;
+    }
+
+    public List<Product_Image> getProductImages() {
+        return productImages;
+    }
+
+    public void setProductImages(List<Product_Image> productImages) {
+        this.productImages = productImages;
+    }
+
+    public Product(Long product_id, String name, String description, String unit, String manufacturer_name, ProductStatus status, List<Order_Detail> orderDetails, List<Product_Price> productPrice, List<Product_Image> productImages) {
         this.product_id = product_id;
         this.name = name;
         this.description = description;
         this.unit = unit;
         this.manufacturer_name = manufacturer_name;
         this.status = status;
-    }
-
-    public Product(Long product_id) {
-        this.product_id = product_id;
+        this.orderDetails = orderDetails;
+        this.productPrice = productPrice;
+        this.productImages = productImages;
     }
 
     public Product() {
@@ -113,6 +137,9 @@ public class Product {
                 ", unit='" + unit + '\'' +
                 ", manufacturer_name='" + manufacturer_name + '\'' +
                 ", status=" + status +
+                ", orderDetails=" + orderDetails +
+                ", productPrice=" + productPrice +
+                ", productImages=" + productImages +
                 '}';
     }
 }

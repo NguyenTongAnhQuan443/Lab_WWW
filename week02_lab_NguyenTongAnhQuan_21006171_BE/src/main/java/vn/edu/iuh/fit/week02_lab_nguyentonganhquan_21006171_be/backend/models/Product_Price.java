@@ -2,6 +2,7 @@ package vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models;
 
 import jakarta.json.bind.annotation.JsonbDateFormat;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -63,10 +64,6 @@ public class Product_Price {
         this.price_date_time = price_date_time;
         this.price = price;
         this.note = note;
-    }
-
-    public Product_Price(Product product) {
-        this.product = product;
     }
 
     public Product_Price() {

@@ -1,12 +1,19 @@
 package vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "customer")
-
+@NamedQueries({
+        @NamedQuery(name = "Customer.findCustomerByIdJoinFetch",
+                query = "select c from Customer c join FETCH c.orderList where c.cust_id =:id"
+        ),
+        @NamedQuery(name = "Customer.findAll", query = "select c from Customer c"),
+        @NamedQuery(name = "Customer.findByEmail", query = "select c from Customer c where c.email = :email")
+})
 public class Customer {
 //    customer (cust_id, cust_name, email, phone, address)
 
@@ -85,10 +92,6 @@ public class Customer {
         this.phone = phone;
         this.address = address;
         this.orderList = orderList;
-    }
-
-    public Customer(Long cust_id) {
-        this.cust_id = cust_id;
     }
 
     public Customer() {

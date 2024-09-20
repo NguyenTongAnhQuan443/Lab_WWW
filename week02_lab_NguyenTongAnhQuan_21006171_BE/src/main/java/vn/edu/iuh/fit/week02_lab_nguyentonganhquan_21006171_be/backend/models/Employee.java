@@ -3,6 +3,7 @@ package vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models;
 import jakarta.json.bind.annotation.JsonbDateFormat;
 import jakarta.persistence.*;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import lombok.*;
 import vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.converts.EmployeeStatusConverter;
 import vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.enums.EmployeeStatus;
 
@@ -11,7 +12,9 @@ import java.util.List;
 
 @Entity
 @Table(name = "employee")
-@XmlRootElement
+@NamedQueries({
+        @NamedQuery(name = "Employee.findAll", query = "select e from Employee e")
+})
 public class Employee {
     //    emp_id, full_name, dob, email, phone, address, status
     @Id
@@ -98,7 +101,15 @@ public class Employee {
         this.status = status;
     }
 
-    public Employee(long emp_id, String full_name, LocalDateTime dob, String email, String phone, String address, EmployeeStatus status) {
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
+    }
+
+    public Employee(long emp_id, String full_name, LocalDateTime dob, String email, String phone, String address, EmployeeStatus status, List<Order> orderList) {
         this.emp_id = emp_id;
         this.full_name = full_name;
         this.dob = dob;
@@ -106,12 +117,23 @@ public class Employee {
         this.phone = phone;
         this.address = address;
         this.status = status;
-    }
-
-    public Employee(long emp_id) {
-        this.emp_id = emp_id;
+        this.orderList = orderList;
     }
 
     public Employee() {
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "emp_id=" + emp_id +
+                ", full_name='" + full_name + '\'' +
+                ", dob=" + dob +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", status=" + status +
+                ", orderList=" + orderList +
+                '}';
     }
 }

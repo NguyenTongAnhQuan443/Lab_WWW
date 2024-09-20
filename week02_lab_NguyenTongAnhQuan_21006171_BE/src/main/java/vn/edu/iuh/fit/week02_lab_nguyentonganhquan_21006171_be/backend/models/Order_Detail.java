@@ -3,21 +3,28 @@ package vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import lombok.*;
 
 @Entity
 @Table(name = "order_detail")
 @XmlRootElement
+@NamedQueries({
+        @NamedQuery(name = "Order_Detail.findById",
+                query = "SELECT od from Order_Detail od where od.order.order_id=:orderID and od.product.product_id= :procId"),
+
+        @NamedQuery(name = "Order_Detail.findAll", query = "select o from Order_Detail o")
+})
 public class Order_Detail {
 //    order_detail (order_id, product_id, quantity, price, note)
 
     @Id
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "order_id", referencedColumnName = "order_id")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Order order;
 
     @Id
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "product_id", referencedColumnName = "product_id")
     private Product product;
 
@@ -76,10 +83,6 @@ public class Order_Detail {
         this.quantity = quantity;
         this.price = price;
         this.note = note;
-    }
-
-    public Order_Detail(Order order) {
-        this.order = order;
     }
 
     public Order_Detail() {

@@ -2,6 +2,7 @@ package vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Table(name = "product_image")
@@ -61,10 +62,6 @@ public class Product_Image {
         this.image_id = image_id;
         this.path = path;
         this.alternative = alternative;
-    }
-
-    public Product_Image(Product product) {
-        this.product = product;
     }
 
     public Product_Image() {

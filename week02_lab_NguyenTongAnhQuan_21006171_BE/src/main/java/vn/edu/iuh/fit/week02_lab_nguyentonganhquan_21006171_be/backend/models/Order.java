@@ -2,12 +2,18 @@ package vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models;
 
 import jakarta.json.bind.annotation.JsonbDateFormat;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "orders")
+@NamedQueries({
+        @NamedQuery(name = "order.findLastOrderByCustId", query = "select o from Order o where o.customer.cust_id = :cust_id order by o.order_date desc"),
+        @NamedQuery(name = "Order.findAll", query = "select o from Order o"),
+
+})
 public class Order {
     //    order_id, order_date, emp_id, cust_id
     @Id
@@ -46,12 +52,12 @@ public class Order {
         this.order_date = order_date;
     }
 
-    public Employee getEmployee_id() {
+    public Employee getEmployee() {
         return employee;
     }
 
-    public void setEmployee_id(Employee employee_id) {
-        this.employee = employee_id;
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     public Customer getCustomer() {
@@ -62,15 +68,20 @@ public class Order {
         this.customer = customer;
     }
 
-    public Order(long order_id, LocalDateTime order_date, Employee employee_id, Customer customer) {
-        this.order_id = order_id;
-        this.order_date = order_date;
-        this.employee = employee_id;
-        this.customer = customer;
+    public List<Order_Detail> getOrderDetails() {
+        return orderDetails;
     }
 
-    public Order(long order_id) {
+    public void setOrderDetails(List<Order_Detail> orderDetails) {
+        this.orderDetails = orderDetails;
+    }
+
+    public Order(long order_id, LocalDateTime order_date, Employee employee, Customer customer, List<Order_Detail> orderDetails) {
         this.order_id = order_id;
+        this.order_date = order_date;
+        this.employee = employee;
+        this.customer = customer;
+        this.orderDetails = orderDetails;
     }
 
     public Order() {
@@ -81,8 +92,9 @@ public class Order {
         return "Order{" +
                 "order_id=" + order_id +
                 ", order_date=" + order_date +
-                ", employee_id=" + employee +
+                ", employee=" + employee +
                 ", customer=" + customer +
+                ", orderDetails=" + orderDetails +
                 '}';
     }
 }

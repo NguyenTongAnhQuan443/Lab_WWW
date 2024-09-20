@@ -108,7 +108,7 @@
     "Tomcat Server.Tomcat 10.1.11.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ADMIN/Downloads/week01_lab_HaAnhThao_20001575-master",
+    "last_opened_file_path": "D:/NguyenQuan_Code/Code_Nam_4/HK1/WWW/Lab_WWW/week01_lab_NguyenTongAnhQuan_21006171",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -222,8 +222,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
       </set>
     </attachedChunks>
   </component>
@@ -247,6 +247,7 @@
       <workItem from="1726452645276" duration="4919000" />
       <workItem from="1726540530553" duration="23381000" />
       <workItem from="1726587630985" duration="208000" />
+      <workItem from="1726839032680" duration="32000" />
     </task>
     <servers />
   </component>

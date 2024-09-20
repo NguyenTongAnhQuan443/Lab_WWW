@@ -33,9 +33,14 @@ dependencies {
     // https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client
     implementation 'org.mariadb.jdbc:mariadb-java-client:3.4.1'
 
-
     // https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc
     implementation 'com.microsoft.sqlserver:mssql-jdbc:11.2.3.jre17'
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    implementation 'org.slf4j:slf4j-api:2.0.16'
+
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.34'
 
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
