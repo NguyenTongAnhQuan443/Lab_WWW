@@ -21,13 +21,13 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name = "employee_id", referencedColumnName = "emp_id")
-    private Employee employee_id;
+    private Employee employee;
 
     @ManyToOne
     @JoinColumn(name = "cust_id", referencedColumnName = "cust_id")
     private Customer customer;
 
-    @OneToMany(mappedBy = "orders", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Order_Detail> orderDetails;
 
     public long getOrder_id() {
@@ -47,11 +47,11 @@ public class Order {
     }
 
     public Employee getEmployee_id() {
-        return employee_id;
+        return employee;
     }
 
     public void setEmployee_id(Employee employee_id) {
-        this.employee_id = employee_id;
+        this.employee = employee_id;
     }
 
     public Customer getCustomer() {
@@ -65,7 +65,7 @@ public class Order {
     public Order(long order_id, LocalDateTime order_date, Employee employee_id, Customer customer) {
         this.order_id = order_id;
         this.order_date = order_date;
-        this.employee_id = employee_id;
+        this.employee = employee_id;
         this.customer = customer;
     }
 
@@ -81,7 +81,7 @@ public class Order {
         return "Order{" +
                 "order_id=" + order_id +
                 ", order_date=" + order_date +
-                ", employee_id=" + employee_id +
+                ", employee_id=" + employee +
                 ", customer=" + customer +
                 '}';
     }

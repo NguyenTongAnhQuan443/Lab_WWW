@@ -18,7 +18,7 @@ public class Product_Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long image_id;
 
-    @Column(name = "path", columnDefinition = "VARCHAR250")
+    @Column(name = "path", columnDefinition = "VARCHAR(250)")
     private String path;
 
     @Column(name = "alternative", columnDefinition = "VARCHAR(250)")

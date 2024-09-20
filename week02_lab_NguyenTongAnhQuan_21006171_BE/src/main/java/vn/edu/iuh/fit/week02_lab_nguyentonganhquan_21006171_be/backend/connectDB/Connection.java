@@ -2,6 +2,7 @@ package vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.connectD
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
 public class Connection {
@@ -22,5 +23,16 @@ public class Connection {
             connection = new Connection();
         }
         return connection;
+    }
+
+    public static void main(String[] args) {
+        Connection connection1 = Connection.getInstance();
+
+        EntityManager entityManager1 = connection1.getEntityManager();
+
+        entityManager1.getTransaction().begin();
+
+        entityManager1.getTransaction().commit();
+//        entityManager1.close();
     }
 }

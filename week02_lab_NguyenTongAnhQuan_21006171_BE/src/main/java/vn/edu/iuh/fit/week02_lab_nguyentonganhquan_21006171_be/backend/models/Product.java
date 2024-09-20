@@ -15,7 +15,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long product_id;
 
-    @Column(name = "name", columnDefinition = "VARCHAR150")
+    @Column(name = "name", columnDefinition = "VARCHAR(150)")
     private String name;
 
     @Column(name = "description", columnDefinition = "VARCHAR(250)")
@@ -31,7 +31,6 @@ public class Product {
     @Convert(converter = ProductStatusConvert.class)
     private ProductStatus status;
 
-
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     private List<Order_Detail> orderDetails;
 
@@ -42,8 +41,8 @@ public class Product {
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     private List<Product_Price> productPrice;
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
-    private List<Product_Image> productImages;
+//    @OneToMany(mappedBy = "product")
+//    private List<Product_Image> productImages;
 
     public void setProduct_id(Long product_id) {
         this.product_id = product_id;

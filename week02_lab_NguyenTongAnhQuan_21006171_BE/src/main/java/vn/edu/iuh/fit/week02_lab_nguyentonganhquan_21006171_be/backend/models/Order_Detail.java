@@ -1,7 +1,6 @@
 package vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.json.bind.annotation.JsonbProperty;
 import jakarta.persistence.*;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
@@ -28,7 +27,7 @@ public class Order_Detail {
     @Column(name = "price", columnDefinition = "DOUBLE")
     private double price;
 
-    @Column(name = "note", columnDefinition = "VARCHAR255")
+    @Column(name = "note", columnDefinition = "VARCHAR(255)")
     private String note;
 
     public Order getOrder() {

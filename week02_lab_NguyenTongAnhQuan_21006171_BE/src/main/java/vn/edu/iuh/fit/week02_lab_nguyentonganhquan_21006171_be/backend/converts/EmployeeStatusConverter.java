@@ -1,8 +1,10 @@
 package vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.converts;
 
 import jakarta.persistence.AttributeConverter;
+import jakarta.persistence.Converter;
 import vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.enums.EmployeeStatus;
 
+@Converter(autoApply = true)
 public class EmployeeStatusConverter implements AttributeConverter<EmployeeStatus, Integer> {
 
     @Override
