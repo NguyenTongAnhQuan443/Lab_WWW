@@ -43,8 +43,8 @@ public class OrderDetailRepositoryImpl implements CRUDRespository<Order_Detail, 
             entityManager.clear();
             return true;
         } catch (Exception e) {
-            logger.error(e.getMessage());
             entityManager.getTransaction().rollback();
+            logger.error(e.getMessage());
             return false;
         }
     }
@@ -62,8 +62,8 @@ public class OrderDetailRepositoryImpl implements CRUDRespository<Order_Detail, 
                 entityManager.clear();
                 return true;
             } catch (Exception e) {
-                logger.error(e.getMessage());
                 entityManager.getTransaction().rollback();
+                logger.error(e.getMessage());
                 return false;
             }
         }
@@ -78,8 +78,8 @@ public class OrderDetailRepositoryImpl implements CRUDRespository<Order_Detail, 
             entityManager.clear();
             return true;
         } catch (Exception e) {
-            logger.error(e.getMessage());
             entityManager.getTransaction().rollback();
+            logger.error(e.getMessage());
             return false;
         }
     }

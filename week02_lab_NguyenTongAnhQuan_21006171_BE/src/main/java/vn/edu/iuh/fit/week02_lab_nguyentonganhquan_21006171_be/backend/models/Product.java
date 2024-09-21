@@ -9,6 +9,10 @@ import java.util.List;
 
 @Entity
 @Table(name = "product")
+@NamedQueries({
+        @NamedQuery(name = "Product.findAll", query = "select p from Product p"),
+        @NamedQuery(name = "Product.findByTopProcNew", query = "select p from Product p order by p.product_id desc")
+})
 public class Product {
     //    product_id, name, description, unit, manufacturer_name, status
     @Id

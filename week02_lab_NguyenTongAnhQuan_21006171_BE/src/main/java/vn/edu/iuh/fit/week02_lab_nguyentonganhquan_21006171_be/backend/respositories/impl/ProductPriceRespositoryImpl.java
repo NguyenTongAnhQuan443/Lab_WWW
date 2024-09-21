@@ -4,26 +4,28 @@ import jakarta.persistence.EntityManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.connectDB.Connection;
-import vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models.Order;
+import vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models.Product_Image;
+import vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models.Product_Price;
 import vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.respositories.CRUDRespository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-public class OrderRepositoryImpl implements CRUDRespository<Order, Long> {
+public class ProductPriceRespositoryImpl implements CRUDRespository<Product_Price, LocalDateTime> {
     private EntityManager entityManager;
     private Logger logger;
 
-    public OrderRepositoryImpl() {
-        entityManager = Connection.getInstance().getEntityManager();
-        logger = LoggerFactory.getLogger(this.getClass());
+    public ProductPriceRespositoryImpl(EntityManager entityManager, Logger logger) {
+        this.entityManager = Connection.getInstance().getEntityManager();
+        this.logger = LoggerFactory.getLogger(this.getClass());
     }
 
     @Override
-    public boolean add(Order order) {
+    public boolean add(Product_Price entity) {
         try {
             entityManager.getTransaction().begin();
-            entityManager.persist(order);
+            entityManager.persist(entity);
             entityManager.getTransaction().commit();
             entityManager.clear();
             return true;
@@ -35,14 +37,14 @@ public class OrderRepositoryImpl implements CRUDRespository<Order, Long> {
     }
 
     @Override
-    public boolean delete(Long id) {
-        Optional<Order> optionalOrder = findById(id);
-        if (optionalOrder.isEmpty()) {
+    public boolean delete(LocalDateTime localDateTime) {
+        Optional<Product_Price> optionalProductPrice = findById(localDateTime);
+        if (optionalProductPrice.isEmpty()) {
             return false;
         } else {
             try {
                 entityManager.getTransaction().begin();
-                entityManager.remove(optionalOrder.get());
+                entityManager.remove(optionalProductPrice.get());
                 entityManager.getTransaction().commit();
                 entityManager.clear();
                 return true;
@@ -55,10 +57,10 @@ public class OrderRepositoryImpl implements CRUDRespository<Order, Long> {
     }
 
     @Override
-    public boolean update(Order order) {
+    public boolean update(Product_Price entity) {
         try {
             entityManager.getTransaction().begin();
-            entityManager.merge(order);
+            entityManager.merge(entity);
             entityManager.getTransaction().commit();
             entityManager.clear();
             return true;
@@ -70,33 +72,13 @@ public class OrderRepositoryImpl implements CRUDRespository<Order, Long> {
     }
 
     @Override
-    public Optional<Order> findById(Long id) {
-        Order order = entityManager.find(Order.class, id);
-        return order == null ? Optional.empty() : Optional.of(order);
+    public Optional<Product_Price> findById(LocalDateTime localDateTime) {
+        Product_Price productPrice = entityManager.find(Product_Price.class, localDateTime);
+        return productPrice == null ? Optional.empty() : Optional.of(productPrice);
     }
 
     @Override
-    public List<Order> findAll(Class<Order> entity) {
-        List<Order> orderList = entityManager.createNamedQuery("Order.findAll", Order.class).getResultList();
-        return orderList;
-    }
-
-    //
-    public Optional<Order> findLastOrderByCusId(Long cusId) {
-        try {
-            List<Order> orderList = entityManager.createNamedQuery("order.findLastOrderByCustId", Order.class)
-                    .setParameter("cust_id", cusId)
-                    .setMaxResults(1)
-                    .getResultList();
-            if (orderList.isEmpty()) {
-                return Optional.empty();
-            } else {
-                return Optional.of(orderList.get(0));
-            }
-        } catch (Exception e) {
-            logger.error(e.getMessage());
-
-            return Optional.empty();
-        }
+    public List<Product_Price> findAll(Class<Product_Price> entity) {
+        return entityManager.createNamedQuery("Product_Price.findAll", Product_Price.class).getResultList();
     }
 }

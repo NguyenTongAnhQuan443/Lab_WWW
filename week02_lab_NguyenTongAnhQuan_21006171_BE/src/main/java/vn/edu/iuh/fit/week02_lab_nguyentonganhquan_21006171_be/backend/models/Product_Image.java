@@ -6,6 +6,9 @@ import lombok.*;
 
 @Entity
 @Table(name = "product_image")
+@NamedQueries({
+        @NamedQuery(name = "Product_Image.findAll", query = "select p from Product_Image p")
+})
 public class Product_Image {
 //    product_image (product_id, image_id, path, alternative)
 

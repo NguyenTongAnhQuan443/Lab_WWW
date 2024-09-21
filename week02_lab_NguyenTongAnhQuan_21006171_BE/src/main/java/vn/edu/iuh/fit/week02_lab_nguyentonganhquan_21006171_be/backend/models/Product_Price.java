@@ -8,6 +8,9 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "product_price")
+@NamedQueries({
+        @NamedQuery(name = "Product_Price.findAll", query = "select p from Product_Price p")
+})
 public class Product_Price {
 //    product_price (product_id, price_date_time, price, note)
 
