@@ -76,7 +76,7 @@ public class OrderRepositoryImpl implements CRUDRespository<Order, Long> {
     }
 
     @Override
-    public List<Order> findAll(Class<Order> entity) {
+    public List<Order> findAll() {
         List<Order> orderList = entityManager.createNamedQuery("Order.findAll", Order.class).getResultList();
         return orderList;
     }

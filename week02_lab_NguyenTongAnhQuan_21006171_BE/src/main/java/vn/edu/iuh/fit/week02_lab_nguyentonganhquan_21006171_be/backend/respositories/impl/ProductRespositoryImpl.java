@@ -69,7 +69,7 @@ public class ProductRespositoryImpl implements CRUDRespository<Product, Long> {
     }
 
     @Override
-    public List<Product> findAll(Class<Product> entity) {
+    public List<Product> findAll() {
         return entityManager.createNamedQuery("Product.findAll", Product.class)
                 .getResultList();
     }

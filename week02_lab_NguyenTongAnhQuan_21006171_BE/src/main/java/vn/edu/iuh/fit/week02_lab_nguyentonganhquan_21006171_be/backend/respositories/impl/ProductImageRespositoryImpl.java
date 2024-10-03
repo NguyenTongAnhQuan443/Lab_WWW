@@ -76,7 +76,7 @@ public class ProductImageRespositoryImpl implements CRUDRespository<Product_Imag
     }
 
     @Override
-    public List<Product_Image> findAll(Class<Product_Image> entity) {
+    public List<Product_Image> findAll() {
         return entityManager.createNamedQuery("Product_Image.findAll", Product_Image.class).getResultList();
     }
 }

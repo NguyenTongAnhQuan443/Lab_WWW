@@ -67,7 +67,7 @@ public class OrderDetailRepositoryp {
         return entityManager.createNamedQuery("OrderDetail.findAll", OrderDetail.class).getResultList();
     }
 
-    public List<OrderDetail> getOrderDetailByNumPage(long orderId, int numPage, int limitNum) {
+    public List<OrderDetail> getOrderDetailByPageNum(long orderId, int numPage, int limitNum) {
         return entityManager.createNamedQuery("OrderDetail.findAllByOrderId", OrderDetail.class)
                 .setParameter("order_id", orderId)
                 .setFirstResult((numPage - 1) * limitNum)

@@ -8,5 +8,5 @@ public interface CRUDRespository<T, ID> {
     boolean delete(ID id);
     boolean update (T entity);
     Optional<T> findById(ID id);
-    List<T> findAll(Class<T> entity);
+    List<T> findAll();
 }

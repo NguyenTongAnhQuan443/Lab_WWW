@@ -48,6 +48,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/webapp/view/notFoundPage.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/view/profile.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/view/roleManager.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week02_lab_NguyenTongAnhQuan_21006171_BE/src/main/java/vn/edu/iuh/fit/week02_lab_nguyentonganhquan_21006171_be/backend/services/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week02_lab_NguyenTongAnhQuan_21006171_BE/src/main/java/vn/edu/iuh/fit/week02_lab_nguyentonganhquan_21006171_be/backend/services/CustomerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +109,7 @@
     "Tomcat Server.Tomcat 10.1.11.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/NguyenQuan_Code/Code_Nam_4/HK1/WWW/Lab_WWW/week01_lab_NguyenTongAnhQuan_21006171",
+    "last_opened_file_path": "D:/NguyenQuan_Code/Code_Nam_4/HK1/WWW/Lab_WWW/week02_lab_NguyenTongAnhQuan_21006171_BE",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -248,6 +249,8 @@
       <workItem from="1726540530553" duration="23381000" />
       <workItem from="1726587630985" duration="208000" />
       <workItem from="1726839032680" duration="32000" />
+      <workItem from="1726912264253" duration="443000" />
+      <workItem from="1726917689484" duration="15000" />
     </task>
     <servers />
   </component>

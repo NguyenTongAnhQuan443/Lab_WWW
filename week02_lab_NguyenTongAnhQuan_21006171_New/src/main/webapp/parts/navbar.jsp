@@ -7,22 +7,22 @@
     </button>
     <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+            <li class="nav-item <%= request.getRequestURI().contains("index.jsp") ? "active" : "" %>">
                 <a class="nav-link" href="index.jsp">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <%= request.getRequestURI().contains("emp_list") ? "active" : "" %>">
                 <a class="nav-link" href="control-servlet?action=emp_list">Q/lý Nhân sự</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <%= request.getRequestURI().contains("cust_list") ? "active" : "" %>">
                 <a class="nav-link" href="control-servlet?action=cust_list">Q/lý Khách hàng</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <%= request.getRequestURI().contains("order_list") ? "active" : "" %>">
                 <a class="nav-link" href="control-servlet?action=order_list">Q/lý Hóa đơn</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <%= request.getRequestURI().contains("handleOpenProductListClient") ? "active" : "" %>">
                 <a class="nav-link" href="control-servlet?action=handleOpenProductListClient">D/sách sản phẩm</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <%= request.getRequestURI().contains("product_list") ? "active" : "" %>">
                 <a class="nav-link" href="control-servlet?action=product_list">Q/lý sản phẩm</a>
             </li>
 
@@ -39,7 +39,7 @@
         </ul>
         <div class="my-2 my-lg-0 d-flex list-inline">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+                <li class="nav-item <%= request.getRequestURI().contains("handleOpenCart") ? "active" : "" %>">
                     <a class="nav-link" href="control-servlet?action=handleOpenCart">Giỏ hàng</a>
                 </li>
                 <li class="nav-item">

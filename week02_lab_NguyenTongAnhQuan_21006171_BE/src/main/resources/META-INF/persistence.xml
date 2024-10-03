@@ -4,14 +4,14 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
     <persistence-unit name="default">
-                <class>vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models.Product</class>
+        <class>vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models.Product</class>
         <class>vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models.Order</class>
         <class>vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models.Employee</class>
         <class>vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models.Customer</class>
-                <class>vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models.Order_Detail</class>
-                <class>vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models.Product_Image</class>
-                <class>vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models.Product_Price</class>
-                <class>vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.converts.ProductStatusConvert</class>
+        <class>vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models.Order_Detail</class>
+        <class>vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models.Product_Image</class>
+        <class>vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models.Product_Price</class>
+        <class>vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.converts.ProductStatusConvert</class>
         <class>vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.converts.EmployeeStatusConverter</class>
 
         <properties>
@@ -39,25 +39,22 @@
             <property name="eclipselink.connection-pool.max" value="10"/>
 
 
+            <!--            &lt;!&ndash; Cấu hình kết nối cơ sở dữ liệu SQL Server &ndash;&gt;-->
+            <!--            <property name="jakarta.persistence.jdbc.url"-->
+            <!--                      value="jdbc:sqlserver://localhost:1433;databaseName=www_week2;encrypt=true;trustServerCertificate=true"/>-->
+            <!--            <property name="jakarta.persistence.jdbc.user" value="sa"/>-->
+            <!--            <property name="jakarta.persistence.jdbc.password" value="sapassword"/>-->
+            <!--            <property name="jakarta.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>-->
 
+            <!--            &lt;!&ndash; Cấu hình để tự động tạo bảng &ndash;&gt;-->
+            <!--            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>-->
 
+            <!--            &lt;!&ndash; Bật log chi tiết nếu cần theo dõi lỗi &ndash;&gt;-->
+            <!--            <property name="eclipselink.logging.level" value="FINE"/>-->
 
-<!--            &lt;!&ndash; Cấu hình kết nối cơ sở dữ liệu SQL Server &ndash;&gt;-->
-<!--            <property name="jakarta.persistence.jdbc.url"-->
-<!--                      value="jdbc:sqlserver://localhost:1433;databaseName=www_week2;encrypt=true;trustServerCertificate=true"/>-->
-<!--            <property name="jakarta.persistence.jdbc.user" value="sa"/>-->
-<!--            <property name="jakarta.persistence.jdbc.password" value="sapassword"/>-->
-<!--            <property name="jakarta.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>-->
-
-<!--            &lt;!&ndash; Cấu hình để tự động tạo bảng &ndash;&gt;-->
-<!--            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>-->
-
-<!--            &lt;!&ndash; Bật log chi tiết nếu cần theo dõi lỗi &ndash;&gt;-->
-<!--            <property name="eclipselink.logging.level" value="FINE"/>-->
-
-<!--            &lt;!&ndash; Tùy chọn: cấu hình pool kết nối &ndash;&gt;-->
-<!--            <property name="eclipselink.connection-pool.min" value="1"/>-->
-<!--            <property name="eclipselink.connection-pool.max" value="10"/>-->
+            <!--            &lt;!&ndash; Tùy chọn: cấu hình pool kết nối &ndash;&gt;-->
+            <!--            <property name="eclipselink.connection-pool.min" value="1"/>-->
+            <!--            <property name="eclipselink.connection-pool.max" value="10"/>-->
         </properties>
 
     </persistence-unit>

@@ -13,7 +13,9 @@ import java.util.List;
 @Entity
 @Table(name = "employee")
 @NamedQueries({
-        @NamedQuery(name = "Employee.findAll", query = "select e from Employee e")
+        @NamedQuery(name = "Employee.findAll", query = "select e from Employee e"),
+        @NamedQuery(name = "Employee.findAllByStatus", query = "select e from Employee e where e.status = :status"),
+        @NamedQuery(name = "Employee.getEmpByPageNum", query = "select e from Employee e where e.status = :status")
 })
 public class Employee {
     //    emp_id, full_name, dob, email, phone, address, status
@@ -42,7 +44,7 @@ public class Employee {
     @Convert(converter = EmployeeStatusConverter.class)
     private EmployeeStatus status;
 
-    @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Order> orderList;
 
     public long getEmp_id() {

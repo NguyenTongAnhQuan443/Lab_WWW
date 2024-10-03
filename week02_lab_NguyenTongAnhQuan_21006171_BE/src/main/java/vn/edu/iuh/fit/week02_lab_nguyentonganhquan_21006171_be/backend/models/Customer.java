@@ -8,6 +8,7 @@ import java.util.List;
 @Entity
 @Table(name = "customer")
 @NamedQueries({
+        @NamedQuery(name = "Customer.getPageNum", query = "select c from Customer c"),
         @NamedQuery(name = "Customer.findCustomerByIdJoinFetch",
                 query = "select c from Customer c join FETCH c.orderList where c.cust_id =:id"
         ),
@@ -34,7 +35,7 @@ public class Customer {
     @Column(name = "address", columnDefinition = "VARCHAR(250)")
     private String address;
 
-    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Order> orderList;
 
     public Long getCust_id() {

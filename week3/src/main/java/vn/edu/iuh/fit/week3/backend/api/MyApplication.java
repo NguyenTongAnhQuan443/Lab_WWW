@@ -1,4 +1,8 @@
 package vn.edu.iuh.fit.week3.backend.api;
 
-public class MyApplication {
+import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.core.Application;
+
+@ApplicationPath("/api")
+public class MyApplication extends Application {
 }

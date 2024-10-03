@@ -1,6 +1,7 @@
 package vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.respositories.impl;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.connectDB.Connection;
@@ -77,7 +78,7 @@ public class CustomerRespositoryIml implements CRUDRespository<Customer, Long> {
     }
 
     @Override
-    public List<Customer> findAll(Class<Customer> entity) {
+    public List<Customer> findAll() {
         return entityManager.createNamedQuery("Customer.findAll", Customer.class).getResultList();
     }
 
@@ -93,4 +94,11 @@ public class CustomerRespositoryIml implements CRUDRespository<Customer, Long> {
                 .setParameter("email", email).getSingleResult();
         return customer == null ? Optional.empty() : Optional.of(customer);
     }
+
+    public List<Customer> getCusByNumPage(int numPage, int limitNum) {
+        return entityManager.createNamedQuery("Customer.getPageNum", Customer.class)
+                .setFirstResult((numPage - 1) * limitNum)
+                .getResultList();
+    }
+
 }

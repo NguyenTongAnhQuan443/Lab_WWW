@@ -1,6 +1,7 @@
 package vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.respositories.impl;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.connectDB.Connection;
@@ -8,6 +9,7 @@ import vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.enums.Emp
 import vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.models.Employee;
 import vn.edu.iuh.fit.week02_lab_nguyentonganhquan_21006171_be.backend.respositories.CRUDRespository;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -63,7 +65,7 @@ public class EmployeeRespositoryImpl implements CRUDRespository<Employee, Long> 
     }
 
     @Override
-    public List<Employee> findAll(Class<Employee> entity) {
+    public List<Employee> findAll() {
         return entityManager.createNamedQuery("Employee.findAll", Employee.class)
                 .getResultList();
     }
@@ -87,5 +89,20 @@ public class EmployeeRespositoryImpl implements CRUDRespository<Employee, Long> 
                 return false;
             }
         }
+    }
+
+    public List<Employee> findAllByStatus() {
+        List<Employee> listEmployee = entityManager.createNamedQuery("Employee.findAllByStatus", Employee.class).
+                setParameter("status", EmployeeStatus.QUITTED)
+                .getResultList();
+        return listEmployee;
+    }
+
+    public List<Employee> getEmplByPageNum(int numPage, int limitNum) {
+        List<Employee> employeeList = entityManager.createNamedQuery("Employee.getEmpByPageNum", Employee.class)
+                .setParameter("status", EmployeeStatus.QUITTED)
+                .setFirstResult((numPage - 1) * limitNum)
+                .getResultList();
+        return employeeList;
     }
 }

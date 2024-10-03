@@ -78,7 +78,7 @@ public class ProductPriceRespositoryImpl implements CRUDRespository<Product_Pric
     }
 
     @Override
-    public List<Product_Price> findAll(Class<Product_Price> entity) {
+    public List<Product_Price> findAll() {
         return entityManager.createNamedQuery("Product_Price.findAll", Product_Price.class).getResultList();
     }
 }
