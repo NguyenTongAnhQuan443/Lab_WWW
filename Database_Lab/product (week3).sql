@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `name` varchar(150) NOT NULL,
   `description` text NOT NULL,
   `img_path` varchar(250) DEFAULT NULL,
+  `status` int(11),
   PRIMARY KEY (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 

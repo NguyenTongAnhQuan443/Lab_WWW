@@ -1,16 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ADMIN
-  Date: 9/30/2024
-  Time: 4:05 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Title</title>
+    <a href="products/AddProductView.jsp">Add Product</a>
 </head>
 <body>
-    <h1>HELLO</h1>
+
 </body>
 </html>

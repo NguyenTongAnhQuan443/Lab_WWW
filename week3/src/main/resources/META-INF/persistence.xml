@@ -4,6 +4,8 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
              version="3.2">
     <persistence-unit name="default" transaction-type="JTA">
-        <jta-data-source>www_week3_pools</jta-data-source>
+        <jta-data-source>jdbc/__Mariadb_Week3</jta-data-source>
+        <class>vn.edu.iuh.fit.backend.repositories.entities.Product</class>
+        <class>vn.edu.iuh.fit.backend.repositories.entities.ProductPrice</class>
     </persistence-unit>
 </persistence>

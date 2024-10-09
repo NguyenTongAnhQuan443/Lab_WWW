@@ -1,16 +1,18 @@
-package vn.edu.iuh.fit.www_week3_1.backend.entities;
+package vn.edu.iuh.fit.week3.backend.repositories.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name = "product", schema = "productdb")
+@Table(name = "product", schema = "www_week3")
 @NamedQueries({
+        @NamedQuery(name = "Product.findById", query = "select p from Product p where p.id = :id"),
         @NamedQuery(name = "Product.findAll", query = "select p from Product p")
 })
 public class Product {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id", nullable = false)
     private Integer id;
 
@@ -28,11 +30,8 @@ public class Product {
     @Column(name = "img_path", length = 250)
     private String imgPath;
 
-    public Product(String name, String description, String imgPath) {
-        this.name = name;
-        this.description = description;
-        this.imgPath = imgPath;
-    }
+    @Column(name = "status")
+    private Integer status;
 
     public Integer getId() {
         return id;
@@ -66,4 +65,32 @@ public class Product {
         this.imgPath = imgPath;
     }
 
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Product() {
+    }
+
+    public Product(Integer id) {
+        this.id = id;
+    }
+
+    public Product(Integer id, String name, String description, String imgPath, Integer status) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.imgPath = imgPath;
+        this.status = status;
+    }
+
+    public Product(String name, String description, String imgPath) {
+        this.name = name;
+        this.description = description;
+        this.imgPath = imgPath;
+    }
 }

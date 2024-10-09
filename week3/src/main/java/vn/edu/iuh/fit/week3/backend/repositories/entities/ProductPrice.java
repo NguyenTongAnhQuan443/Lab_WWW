@@ -1,4 +1,4 @@
-package vn.edu.iuh.fit.week3.backend.repositories.entity;
+package vn.edu.iuh.fit.week3.backend.repositories.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -10,6 +10,7 @@ import java.time.Instant;
 @Table(name = "product_price", schema = "www_week3")
 public class ProductPrice {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "price_id", nullable = false)
     private Integer id;
 
@@ -72,25 +73,18 @@ public class ProductPrice {
         this.note = note;
     }
 
+    public ProductPrice() {
+    }
+
+    public ProductPrice(Integer id) {
+        this.id = id;
+    }
+
     public ProductPrice(Integer id, Product product, Instant applyDate, Double value, String note) {
         this.id = id;
         this.product = product;
         this.applyDate = applyDate;
         this.value = value;
         this.note = note;
-    }
-
-    public ProductPrice() {
-    }
-
-    @Override
-    public String toString() {
-        return "ProductPrice{" +
-                "id=" + id +
-                ", product=" + product +
-                ", applyDate=" + applyDate +
-                ", value=" + value +
-                ", note='" + note + '\'' +
-                '}';
     }
 }
