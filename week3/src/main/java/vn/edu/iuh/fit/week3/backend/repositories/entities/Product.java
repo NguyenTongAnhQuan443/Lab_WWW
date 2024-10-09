@@ -4,13 +4,15 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "product", schema = "www_week3")
 @NamedQueries({
         @NamedQuery(name = "Product.findById", query = "select p from Product p where p.id = :id"),
         @NamedQuery(name = "Product.findAll", query = "select p from Product p")
 })
-public class Product {
+public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id", nullable = false)
