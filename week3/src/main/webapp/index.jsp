@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>Title</title>
-    <a href="products/AddProductView.jsp">Add Product</a>
+<%--    <a href="products/AddProductView.jsp">Add Product</a>--%>
+    <a href="index.html">Add Product</a>
 </head>
 <body>
 

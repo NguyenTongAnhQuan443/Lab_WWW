@@ -4,12 +4,14 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import org.hibernate.annotations.ColumnDefault;
 
-import java.io.Serializable;
-import java.time.Instant;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "product_price", schema = "www_week3")
-public class ProductPrice implements Serializable {
+@NamedQueries({
+        @NamedQuery(name = "ProductPrice.findByProduct_IdOrderByApplyDateDesc", query = "select p from ProductPrice p where p.product.id = :id order by p.applyDate DESC")
+})
+public class ProductPrice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "price_id", nullable = false)
@@ -23,7 +25,7 @@ public class ProductPrice implements Serializable {
     @NotNull
     @ColumnDefault("current_timestamp()")
     @Column(name = "apply_date", nullable = false)
-    private Instant applyDate;
+    private Timestamp applyDate;
 
     @NotNull
     @ColumnDefault("0")
@@ -50,11 +52,11 @@ public class ProductPrice implements Serializable {
         this.product = product;
     }
 
-    public Instant getApplyDate() {
+    public Timestamp getApplyDate() {
         return applyDate;
     }
 
-    public void setApplyDate(Instant applyDate) {
+    public void setApplyDate(Timestamp applyDate) {
         this.applyDate = applyDate;
     }
 
@@ -81,7 +83,7 @@ public class ProductPrice implements Serializable {
         this.id = id;
     }
 
-    public ProductPrice(Integer id, Product product, Instant applyDate, Double value, String note) {
+    public ProductPrice(Integer id, Product product, Timestamp applyDate, Double value, String note) {
         this.id = id;
         this.product = product;
         this.applyDate = applyDate;

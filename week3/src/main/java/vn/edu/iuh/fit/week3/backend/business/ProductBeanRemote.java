@@ -1,11 +1,11 @@
 package vn.edu.iuh.fit.week3.backend.business;
 
-import jakarta.ejb.Remote;
+import jakarta.ejb.Local;
 import vn.edu.iuh.fit.week3.backend.repositories.entities.Product;
 
 import java.util.List;
 
-@Remote
+@Local
 public interface ProductBeanRemote {
     boolean add(Product product);
 

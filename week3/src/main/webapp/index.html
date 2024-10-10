@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="#!">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">All Products</a></li>
+                        <li>
+                            <hr class="dropdown-divider"/>
+                        </li>
+                        <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                        <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <button class="btn btn-outline-dark" type="submit">
+                    <i class="bi-cart-fill me-1"></i>
+                    Cart
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+<!-- Header-->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Shop in style</h1>
+            <p class="lead fw-normal text-white-50 mb-0">With this shop homepage template</p>
+        </div>
+    </div>
+</header>
+<!-- Section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div id="product-list" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <!-- Products will be injected here -->
+        </div>
+    </div>
+</section>
+<!-- Footer-->
+<footer class="py-5 bg-dark">
+    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+
+<!-- JavaScript to fetch and display products -->
+<script>
+    // Gọi API để lấy danh sách sản phẩm
+    fetch('http://localhost:8080/week3-1.0-SNAPSHOT/api/products') // Đường dẫn đến API
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json(); // Parse kết quả trả về từ API thành JSON
+        })
+        .then(data => {
+            console.log(data); // In dữ liệu ra console để kiểm tra
+            renderProducts(data); // Gọi hàm renderProducts với dữ liệu từ API
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+
+    // Hàm hiển thị danh sách sản phẩm
+    function renderProducts(productList) {
+        const productContainer = document.getElementById('product-list');
+        productContainer.innerHTML = ""; // Xóa nội dung cũ để không bị trùng lặp sản phẩm
+        productList.forEach(product => {
+            const productCard = `
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <img class="card-img-top" src="https://bmwmiennam.vn/wp-content/uploads/2021/11/BMW-X5-Msport-2.jpg" alt="Product Image" />
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <h5 class="fw-bolder">${product.description}</h5>
+                            ${product.imgPath}
+                        </div>
+                    </div>
+
+                    <!-- Product buttons: View, Delete, Edit -->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <form action="controller" method="post" class="d-flex justify-content-between">
+
+                            <!--Gửi dữ liêu-->
+                            <input type="hidden" name="action" value="productDetails">
+                            <input type="hidden" name="product_id" value="${product.id}">
+
+                            <button class="btn btn-outline-dark" type="submit">
+                                <i class="bi-eye-fill"></i> Xem
+                            </button>
+
+                            <button class="btn btn-outline-danger" type="submit">
+                                <i class="bi-trash-fill"></i> Xóa
+                            </button>
+
+                            <button class="btn btn-outline-primary" type="submit">
+                                <i class="bi-pencil-fill"></i> Sửa
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>`;
+            productContainer.innerHTML += productCard; // Thêm sản phẩm vào giao diện
+        });
+    }
+</script>
+
+</body>
+</html>

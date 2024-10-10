@@ -2,6 +2,6 @@
 <project version="4">
   <component name="JpaBuddyIdeaProjectConfig" reUseTableSchema="true">
     <option name="reLastEntityCreationPackage" value="src/main/java/vn/edu/iuh/fit/week3/backend/repositories/entities" />
-    <option name="reverseEngineeringLastDbConnectionId" value="23b8f564-c5fa-471f-a0f4-276acf8a48e3" />
+    <option name="reverseEngineeringLastDbConnectionId" value="a848713c-c83f-441b-889a-a56ffcaf71a9" />
   </component>
 </project>
