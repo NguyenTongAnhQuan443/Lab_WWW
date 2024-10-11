@@ -9,7 +9,8 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "product_price", schema = "www_week3")
 @NamedQueries({
-        @NamedQuery(name = "ProductPrice.findByProduct_IdOrderByApplyDateDesc", query = "select p from ProductPrice p where p.product.id = :id order by p.applyDate DESC")
+        @NamedQuery(name = "ProductPrice.findByProduct_IdOrderByApplyDateDesc", query = "select p from ProductPrice p where p.product.id = :id order by p.applyDate DESC"),
+        @NamedQuery(name = "ProductPrice.deleteByProduct_Id", query = "delete from ProductPrice p where p.product.id = :id")
 })
 public class ProductPrice {
     @Id

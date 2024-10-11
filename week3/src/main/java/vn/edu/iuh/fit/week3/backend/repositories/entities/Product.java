@@ -36,16 +36,6 @@ public class Product {
     @Column(name = "status")
     private Integer status;
 
-    // Quan hệ OneToMany với ProductPrice
-    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE, orphanRemoval = true)
-    private List<ProductPrice> productPrices;
-
-    // Getters and setters for productPrices
-    public List<ProductPrice> getProductPrices() {
-        return productPrices;
-    }
-
-
     public Integer getId() {
         return id;
     }

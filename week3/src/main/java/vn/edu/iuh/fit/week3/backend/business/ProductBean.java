@@ -41,4 +41,11 @@ public class ProductBean implements ProductBeanRemote {
     public Product getById(int id) {
         return entityManager.find(Product.class, id);
     }
+
+    @Override
+    public boolean deleteById(int id) {
+        return entityManager.createNamedQuery("Product.deleteById")
+                .setParameter("id", id)
+                .executeUpdate() > 0;
+    }
 }

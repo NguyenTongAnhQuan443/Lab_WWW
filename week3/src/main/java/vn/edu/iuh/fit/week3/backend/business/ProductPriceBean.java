@@ -27,4 +27,11 @@ public class ProductPriceBean implements ProductPriceBeanRemote {
                 .setParameter("id", id)
                 .getResultList();
     }
+
+    @Override
+    public boolean deleteById(int id) {
+        return entityManager.createNamedQuery("ProductPrice.deleteByProduct_Id")
+                .setParameter("id", id)
+                .executeUpdate() > 0;
+    }
 }

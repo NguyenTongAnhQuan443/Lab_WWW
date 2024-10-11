@@ -26,9 +26,37 @@
             <textarea class="form-control" id="product_description" name="product_description"></textarea>
         </div>
 
+        <!-- Text input-->
         <div class="form-group">
             <label class="control-label" for="image_path">Image Path</label>
             <input id="image_path" name="img_path" placeholder="Image Path" class="form-control input-md" required="" type="text">
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="control-label" for="image_path">Image Path</label>
+            <input id="price" name="price" placeholder="price" class="form-control input-md" required="" type="text">
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="control-label" for="image_path">Image Path</label>
+            <input id="note" name="note" placeholder="note" class="form-control input-md" required="" type="text">
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="control-label" for="image_path">Image Path</label>
+            <input id="apply_date" name="apply_date" placeholder="apply_date" class="form-control input-md" required="" type="text">
+        </div>
+
+        <!-- Select input for status -->
+        <div class="form-group">
+            <label class="control-label" for="status">Status</label>
+            <select id="status" name="status" class="form-control input-md" required="">
+                <option value="1">Active</option>
+                <option value="0">Inactive</option>
+            </select>
         </div>
 
         <!-- Button -->

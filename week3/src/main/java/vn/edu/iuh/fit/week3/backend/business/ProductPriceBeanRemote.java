@@ -8,4 +8,6 @@ import java.util.List;
 @Local
 public interface ProductPriceBeanRemote {
     List<ProductPrice> getByIdProduct(int id);
+
+    boolean deleteById(int id);
 }
