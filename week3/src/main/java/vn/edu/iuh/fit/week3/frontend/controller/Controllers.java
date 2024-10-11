@@ -14,6 +14,7 @@ import vn.edu.iuh.fit.week3.backend.repositories.entities.ProductPrice;
 import vn.edu.iuh.fit.week3.frontend.models.ProductModel;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.List;
 
 @WebServlet(name = "Controller", value = "/controller")
@@ -53,20 +54,31 @@ public class Controllers extends HttpServlet {
                 resp.sendRedirect("index.html");
                 break;
 
-            case "addProduct":
-                req.getRequestDispatcher("AddProductView.jsp").forward(req, resp);
+            case "add":
+                resp.sendRedirect("addProductView.jsp");
+                break;
 
+            case "addProduct":
                 String name = req.getParameter("product_name");
 
                 String description = req.getParameter("product_description");
 
-                String imgPath = req.getParameter("img_path");
-                int status = Integer.parseInt(req.getParameter("status"));
-                double price = Double.parseDouble(req.getParameter("price"));
-//                String note = req.getParameter("note");
+                String imgPath = req.getParameter("image_path");
 
-                Product product = new Product(name, description, imgPath);
-                productModel.createProduct(product);
+                double price = Double.parseDouble(req.getParameter("price"));
+
+                String note = req.getParameter("note");
+
+                int status = Integer.parseInt(req.getParameter("status"));
+
+                Product product = new Product(name, description, imgPath, status);
+
+                long millis = System.currentTimeMillis();
+                ProductPrice productPrice = new ProductPrice(product, new Timestamp(millis), price, note);
+
+                productBeanRemote.add(product);
+                productPriceBeanRemote.add(productPrice);
+
                 resp.sendRedirect("index.html");
                 break;
             default:

@@ -10,4 +10,6 @@ public interface ProductPriceBeanRemote {
     List<ProductPrice> getByIdProduct(int id);
 
     boolean deleteById(int id);
+
+    boolean add(ProductPrice productPrice);
 }

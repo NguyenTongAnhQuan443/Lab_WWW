@@ -34,4 +34,16 @@ public class ProductPriceBean implements ProductPriceBeanRemote {
                 .setParameter("id", id)
                 .executeUpdate() > 0;
     }
+
+    @Override
+    public boolean add(ProductPrice productPrice) {
+        try {
+            entityManager.persist(productPrice);
+            entityManager.flush();
+            return true;
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
 }

@@ -11,7 +11,7 @@ public class ProductModel {
 
     private final String ADD_URL = ("http://localhost:8080/week3-1.0-SNAPSHOT/api/products");
 
-    public void createProduct(Product product) {
+    public void addProduct(Product product) {
         try (Client client = ClientBuilder.newClient()) {
             WebTarget webTarget = client.target(ADD_URL);
 

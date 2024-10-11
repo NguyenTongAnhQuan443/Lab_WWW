@@ -96,4 +96,11 @@ public class Product {
         this.description = description;
         this.imgPath = imgPath;
     }
+
+    public Product(String name, String description, String imgPath, Integer status) {
+        this.name = name;
+        this.description = description;
+        this.imgPath = imgPath;
+        this.status = status;
+    }
 }

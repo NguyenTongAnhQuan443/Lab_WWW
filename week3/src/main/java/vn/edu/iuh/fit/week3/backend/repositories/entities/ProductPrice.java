@@ -91,4 +91,11 @@ public class ProductPrice {
         this.value = value;
         this.note = note;
     }
+
+    public ProductPrice(Product product, Timestamp applyDate, Double value, String note) {
+        this.product = product;
+        this.applyDate = applyDate;
+        this.value = value;
+        this.note = note;
+    }
 }
