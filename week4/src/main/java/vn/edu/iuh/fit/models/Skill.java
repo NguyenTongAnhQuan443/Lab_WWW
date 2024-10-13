@@ -4,25 +4,23 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import vn.edu.iuh.fit.Enums.SkillType;
 
-@Getter
-@Setter
-@Entity
-@Table(name = "skill", schema = "week4")
+import java.util.UUID;
+
+@Data
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Skill {
-    @Id
-    @Column(name = "skill_id", columnDefinition = "uuid not null")
-    private Object id;
+    private UUID id;
+    private String description;
+    private String name;
+    private SkillType type;
 
-    @Column(name = "skill_description")
-    private String skillDescription;
-
-    @Column(name = "skill_name")
-    private String skillName;
-
-    @Column(name = "type")
-    private Byte type;
+    public Skill(UUID id) {
+        this.id = id;
+    }
 
 }

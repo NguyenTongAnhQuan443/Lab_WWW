@@ -1,26 +1,20 @@
 package vn.edu.iuh.fit.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
-@Entity
-@Table(name = "job", schema = "week4")
+import java.util.UUID;
+@Data
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Job {
-    @Id
-    @Column(name = "job_id", columnDefinition = "uuid not null")
-    private Object id;
+    private UUID id;
+    private Company company;
+    private String description;
+    private String name;
 
-    @Column(name = "job_desc", nullable = false, length = 2000)
-    private String jobDesc;
-
-    @Column(name = "job_name", nullable = false)
-    private String jobName;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company")
-    private vn.edu.iuh.fit.Company company;
-
+    public Job(UUID id) {
+        this.id = id;
+    }
 }
