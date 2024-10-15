@@ -1,10 +1,10 @@
 package vn.edu.iuh.fit.models;
 
-import jakarta.persistence.*;
 import lombok.*;
-import vn.edu.iuh.fit.Enums.SkillLevel;
+import vn.edu.iuh.fit.enums.SkillLevel;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
@@ -13,4 +13,6 @@ public class CandidateSkill {
     private Skill skill;
     private String moreInfos;
     private SkillLevel skillLevel;
+
+
 }

@@ -1,11 +1,11 @@
 package vn.edu.iuh.fit.models;
 
-import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.UUID;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString

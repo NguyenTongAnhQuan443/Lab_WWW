@@ -41,12 +41,14 @@ INSERT INTO `address` (`id`, `street`, `city`, `country`, `number`, `zipcode`) V
 -- Dumping structure for table works.candidate
 DROP TABLE IF EXISTS `candidate`;
 CREATE TABLE IF NOT EXISTS `candidate` (
-  `id` uuid NOT NULL,
-  `dob` date NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `full_name` varchar(255) NOT NULL,
-  `phone` varchar(15) NOT NULL,
-  `address` uuid NOT NULL,
+    `id` uuid NOT NULL,
+    `dob` timestamp NOT NULL,
+    `email` varchar(255) NOT NULL,
+    `last_name` varchar(255) NOT NULL,
+    `middle_name` varchar(255) NOT NULL,
+    `first_name` varchar(255) NOT NULL,
+    `phone` varchar(15) NOT NULL,
+    `address` uuid NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_qfut8ruekode092nlkipgl09g` (`email`),
   UNIQUE KEY `UK_9i5yt1gvm0chg5e10qkns7tll` (`phone`),

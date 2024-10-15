@@ -1,18 +1,20 @@
 package vn.edu.iuh.fit.models;
 
-import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 public class Candidate {
     private UUID id;
-    private String fullName;
+    private String last_Name;
+    private String middle_Name;
+    private String first_Name;
     private String email;
     private String phone;
     private Address address;
