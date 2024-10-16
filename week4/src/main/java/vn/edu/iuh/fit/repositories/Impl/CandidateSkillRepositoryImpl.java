@@ -3,12 +3,8 @@ package vn.edu.iuh.fit.repositories.Impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import vn.edu.iuh.fit.enums.SkillLevel;
 import vn.edu.iuh.fit.mappers.CandidateSkillMapper;
-import vn.edu.iuh.fit.models.Candidate;
 import vn.edu.iuh.fit.models.CandidateSkill;
-import vn.edu.iuh.fit.models.Skill;
-import vn.edu.iuh.fit.repositories.ICandidateRepository;
 import vn.edu.iuh.fit.repositories.ICandidateSkillRepository;
 
 import javax.sql.DataSource;
@@ -17,14 +13,14 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public class CandidateSkillRepository implements ICandidateSkillRepository {
+public class CandidateSkillRepositoryImpl implements ICandidateSkillRepository {
 
     private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
     private CandidateSkillMapper candidateSkillMapper;
 
     @Autowired
-    public CandidateSkillRepository(DataSource dataSource, CandidateSkillMapper candidateSkillMapper) {
+    public CandidateSkillRepositoryImpl(DataSource dataSource, CandidateSkillMapper candidateSkillMapper) {
         this.dataSource = dataSource;
         this.jdbcTemplate = new JdbcTemplate(dataSource);
         this.candidateSkillMapper = candidateSkillMapper;
