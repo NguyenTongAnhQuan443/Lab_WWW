@@ -3,11 +3,8 @@ package vn.edu.iuh.fit.repositories.Impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import vn.edu.iuh.fit.enums.SkillLevel;
 import vn.edu.iuh.fit.mappers.JobSkillMapper;
-import vn.edu.iuh.fit.models.Job;
 import vn.edu.iuh.fit.models.JobSkill;
-import vn.edu.iuh.fit.models.Skill;
 import vn.edu.iuh.fit.repositories.IJobSkillRepository;
 
 import javax.sql.DataSource;

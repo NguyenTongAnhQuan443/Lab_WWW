@@ -8,7 +8,6 @@ import java.util.UUID;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @ToString
 public class Candidate {
     private UUID id;
@@ -25,5 +24,16 @@ public class Candidate {
     }
 
     public void setAddress(Address address) {
+    }
+
+    public Candidate(UUID id, String last_Name, String middle_Name, String first_Name, String email, String phone, Address address, LocalDate dob) {
+        this.id = id;
+        this.last_Name = last_Name;
+        this.middle_Name = middle_Name;
+        this.first_Name = first_Name;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+        this.dob = dob;
     }
 }

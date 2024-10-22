@@ -1,5 +1,6 @@
 package vn.edu.iuh.fit.repositories.Impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -17,6 +18,7 @@ public class AddressRepositoryImpl implements IAddressRespository {
     private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
     public AddressRepositoryImpl(DataSource dataSource) {
         this.dataSource = dataSource;
         this.jdbcTemplate = new JdbcTemplate(dataSource);

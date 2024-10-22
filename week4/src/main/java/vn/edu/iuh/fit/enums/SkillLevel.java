@@ -14,7 +14,6 @@ public enum SkillLevel {
     }
     public static SkillLevel getSkillLevel(int level){
         return switch (level){
-            case 0 -> SkillLevel.JUNIOR;
             case 1 -> SkillLevel.MIDDLE;
             case 2 -> SkillLevel.SENIOR;
             default -> SkillLevel.JUNIOR;

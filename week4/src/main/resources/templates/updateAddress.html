@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cập nhật địa chỉ</title>
+</head>
+<body>
+<h1>Cập Nhật Địa chỉ</h1>
+<form action="#" th:action="@{/address/update}" th:object="${address}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label for="addressDetail">Địa chỉ:</label>
+    <input type="text" id="addressDetail" th:field="*{addressDetail}" />
+    <br><br>
+    <button type="submit">Cập nhật</button>
+</form>
+</body>
+</html>

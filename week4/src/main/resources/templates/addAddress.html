@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm địa chỉ</title>
+</head>
+<body>
+<h1>Thêm Địa chỉ Mới</h1>
+<form action="#" th:action="@{/address/add}" th:object="${address}" method="post">
+    <label for="addressDetail">Địa chỉ:</label>
+    <input type="text" id="addressDetail" th:field="*{addressDetail}" placeholder="Nhập địa chỉ" />
+    <br><br>
+    <button type="submit">Thêm</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách địa chỉ</title>
+</head>
+<body>
+<h1>Danh sách Địa chỉ</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Chi tiết</th>
+        <th>Hành động</th>
+    </tr>
+    <tr th:each="address : ${addresses}">
+        <td th:text="${address.id}"></td>
+        <td th:text="${address.addressDetail}"></td>
+        <td>
+            <a th:href="@{'/address/' + ${address.id}}">Chi tiết</a>
+            <a th:href="@{'/address/update/' + ${address.id}}">Cập nhật</a>
+            <a th:href="@{'/address/delete/' + ${address.id}}">Xóa</a>
+        </td>
+    </tr>
+</table>
+<a href="/address/add">Thêm địa chỉ mới</a>
+</body>
+</html>
