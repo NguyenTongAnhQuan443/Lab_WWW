@@ -3,6 +3,7 @@ package vn.edu.iuh.fit.models;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.UUID;
 
 @Getter
@@ -35,5 +36,32 @@ public class Candidate {
         this.phone = phone;
         this.address = address;
         this.dob = dob;
+    }
+
+    //    GET FULL NAME
+    public String getFullName() {
+        return String.join(" ", first_Name, middle_Name, last_Name);
+    }
+
+    //    SET FULL NAME
+    public void setFullName(String fullName) {
+        String[] parts = fullName.trim().split("\\s+");
+        if (parts.length >= 3) {
+            this.first_Name = parts[0];
+            this.last_Name = parts[parts.length - 1];
+            this.middle_Name = String.join(" ", Arrays.copyOfRange(parts, 1, parts.length - 1));
+        } else if (parts.length == 2) {
+            this.first_Name = parts[0];
+            this.middle_Name = "";
+            this.last_Name = parts[1];
+        } else if (parts.length == 1) {
+            this.first_Name = parts[0];
+            this.middle_Name = "";
+            this.last_Name = "";
+        } else {
+            this.first_Name = "";
+            this.middle_Name = "";
+            this.last_Name = "";
+        }
     }
 }

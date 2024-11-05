@@ -48,7 +48,58 @@
       <change afterPath="$PROJECT_DIR$/src/main/webapp/view/notFoundPage.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/view/profile.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/view/roleManager.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week02_lab_NguyenTongAnhQuan_21006171_BE/src/main/java/vn/edu/iuh/fit/week02_lab_nguyentonganhquan_21006171_be/backend/services/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week02_lab_NguyenTongAnhQuan_21006171_BE/src/main/java/vn/edu/iuh/fit/week02_lab_nguyentonganhquan_21006171_be/backend/services/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrudUserJSPT/src/main/java/vn/edu/iuh/fit/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudUserJSPT/src/main/java/vn/edu/iuh/fit/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrudUserJSPT/src/main/java/vn/edu/iuh/fit/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudUserJSPT/src/main/java/vn/edu/iuh/fit/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrudUserJSPT/src/main/webapp/views/display-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudUserJSPT/src/main/webapp/views/display-user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CrudUserJSPT/src/main/webapp/views/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../CrudUserJSPT/src/main/webapp/views/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyOT01/src/main/java/vn/edu/iuh/fit/CalculatorServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyOT01/src/main/webapp/views/calculator.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyOT01/src/main/webapp/views/result.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyOT02/src/main/webapp/views/calculator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../MyOT02/src/main/webapp/views/calculator.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyOT02/src/main/webapp/views/result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../MyOT02/src/main/webapp/views/result.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyOT03/src/main/java/vn/edu/iuh/fit/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MyOT03/src/main/java/vn/edu/iuh/fit/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyOT03/src/main/java/vn/edu/iuh/fit/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MyOT03/src/main/java/vn/edu/iuh/fit/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyOT03/src/main/webapp/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../MyOT03/src/main/webapp/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyOT03/src/main/webapp/views/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../MyOT03/src/main/webapp/views/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyOT03/src/main/webapp/views/result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../MyOT03/src/main/webapp/views/result.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyOT04/src/main/webapp/views/upload.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../MyOT04/src/main/webapp/views/upload.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyOT05/src/main/java/vn/edu/iuh/fit/models/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MyOT05/src/main/java/vn/edu/iuh/fit/models/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyOT05/src/main/webapp/views/staff.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../MyOT05/src/main/webapp/views/staff.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/Services/AccountServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/Services/AccountServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/Services/LogServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/Services/LogServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/Services/RoleServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/Services/RoleServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/connection/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/connection/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/models/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/models/GrantAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/models/GrantAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/models/GrantAccessId.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/models/GrantAccessId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/models/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/models/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/models/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/repositories/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/repositories/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/repositories/CRUDRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/repositories/CRUDRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/repositories/LogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/repositories/LogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/repositories/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Week1_OT/src/main/java/vn/edu/iuh/fit/repositories/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Week1_OT/src/main/webapp/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Week1_OT/src/main/webapp/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week2_OT/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week2_OT/src/main/java/vn/edu/iuh/fit/connection/Connection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week2_OT/src/main/java/vn/edu/iuh/fit/models/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week2_OT/src/main/java/vn/edu/iuh/fit/models/AccountStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week2_OT/src/main/java/vn/edu/iuh/fit/models/GrantAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week2_OT/src/main/java/vn/edu/iuh/fit/models/IsGrant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week2_OT/src/main/java/vn/edu/iuh/fit/models/Log.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week2_OT/src/main/java/vn/edu/iuh/fit/models/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week2_OT/src/main/java/vn/edu/iuh/fit/models/RoleStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week4/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../week4/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week4/src/main/java/vn/edu/iuh/fit/enums/SkillLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week4/src/main/java/vn/edu/iuh/fit/enums/SkillLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week4/src/main/java/vn/edu/iuh/fit/mappers/CandidateMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week4/src/main/java/vn/edu/iuh/fit/mappers/CandidateMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week4/src/main/java/vn/edu/iuh/fit/mappers/CompanyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week4/src/main/java/vn/edu/iuh/fit/mappers/CompanyMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week4/src/main/java/vn/edu/iuh/fit/mappers/JobMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week4/src/main/java/vn/edu/iuh/fit/mappers/JobMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week4/src/main/java/vn/edu/iuh/fit/mappers/SkillMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week4/src/main/java/vn/edu/iuh/fit/mappers/SkillMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week4/src/main/java/vn/edu/iuh/fit/models/Candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week4/src/main/java/vn/edu/iuh/fit/models/Candidate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week4/src/main/java/vn/edu/iuh/fit/repositories/Impl/SkillRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week4/src/main/java/vn/edu/iuh/fit/repositories/Impl/SkillRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week4/src/main/resources/Query.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../week4/src/main/resources/Query.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week4/src/test/java/vn/edu/iuh/fit/repositories/AddressrepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week4/src/test/java/vn/edu/iuh/fit/repositories/AddressrepositoryImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week4/src/test/java/vn/edu/iuh/fit/repositories/CandidateRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week4/src/test/java/vn/edu/iuh/fit/repositories/CandidateRepositoryImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week4/src/test/java/vn/edu/iuh/fit/repositories/SkillRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week4/src/test/java/vn/edu/iuh/fit/repositories/SkillRepositoryImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +153,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Build week01_lab_NguyenTongAnhQuan_21006171.executor": "Run",
+    "Gradle.week01_lab_NguyenTongAnhQuan_21006171 [:vn.edu.iuh.fit.week01_lab_nguyentonganhquan_21006171.services.AccountServices.main()].executor": "Run",
     "JavaScript Debug.dashboard.jsp.executor": "Run",
     "JavaScript Debug.profile.jsp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -109,7 +161,7 @@
     "Tomcat Server.Tomcat 10.1.11.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/NguyenQuan_Code/Code_Nam_4/HK1/WWW/Lab_WWW/week02_lab_NguyenTongAnhQuan_21006171_BE",
+    "last_opened_file_path": "D:/NguyenQuan_Code/Code_Nam_4/HK1/WWW/Lab_WWW/GKCH01",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -130,7 +182,20 @@
       <recent name="D:\NguyenQuan_Code\Code_Nam_4\HK1\WWW\Lab_WWW\week01_lab_NguyenTongAnhQuan_21006171\src\main\webapp\view" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.AccountServices">
+    <configuration name="AccountServices" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vn.edu.iuh.fit.week01_lab_nguyentonganhquan_21006171.services.AccountServices" />
+      <module name="week01_lab_NguyenTongAnhQuan_21006171.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vn.edu.iuh.fit.week01_lab_nguyentonganhquan_21006171.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 10.1.11" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.11" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
@@ -219,12 +284,17 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AccountServices" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -251,6 +321,8 @@
       <workItem from="1726839032680" duration="32000" />
       <workItem from="1726912264253" duration="443000" />
       <workItem from="1726917689484" duration="15000" />
+      <workItem from="1729905102502" duration="12621000" />
+      <workItem from="1729926618462" duration="17000" />
     </task>
     <servers />
   </component>

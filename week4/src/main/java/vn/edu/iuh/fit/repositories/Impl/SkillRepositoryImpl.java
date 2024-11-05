@@ -3,7 +3,6 @@ package vn.edu.iuh.fit.repositories.Impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import vn.edu.iuh.fit.enums.SkillType;
 import vn.edu.iuh.fit.mappers.SkillMapper;
 import vn.edu.iuh.fit.models.Skill;
 import vn.edu.iuh.fit.repositories.ISkillRepository;
@@ -27,7 +26,7 @@ public class SkillRepositoryImpl implements ISkillRepository {
 
     @Override
     public boolean addSkill(Skill skill) {
-        String sql = "INSERT INTO skill (id, description, name, type) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO skill (skill_id, skill_description, skill_name, type) VALUES (?, ?, ?, ?)";
         return jdbcTemplate.update(sql, skill.getId(), skill.getDescription(), skill.getName(), skill.getType()) > 0;
     }
 

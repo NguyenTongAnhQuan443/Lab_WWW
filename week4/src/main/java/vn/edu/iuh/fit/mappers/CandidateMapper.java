@@ -3,14 +3,11 @@ package vn.edu.iuh.fit.mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
-import vn.edu.iuh.fit.models.Address;
 import vn.edu.iuh.fit.models.Candidate;
 import vn.edu.iuh.fit.repositories.Impl.AddressRepositoryImpl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.UUID;
 
 @Component
@@ -26,7 +23,7 @@ public class CandidateMapper implements RowMapper<Candidate> {
     @Override
     public Candidate mapRow(ResultSet rs, int rowNum) throws SQLException {
         Candidate candidate = new Candidate();
-        candidate.setId(UUID.fromString("id"));
+        candidate.setId(UUID.fromString(rs.getString("id")));
         candidate.setLast_Name(rs.getString("last_name"));
         candidate.setMiddle_Name(rs.getString("middle_name"));
         candidate.setFirst_Name(rs.getString("first_name"));

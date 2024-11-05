@@ -8,11 +8,6 @@ public class Connection {
     private final EntityManager entityManager;
     private static Connection connection;
 
-    private Connection() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
-        entityManager = emf.createEntityManager();
-    }
-
     public EntityManager getEntityManager() {
         return entityManager;
     }
@@ -22,4 +17,11 @@ public class Connection {
             connection = new Connection();
         return connection;
     }
+
+    private Connection() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
+        entityManager = emf.createEntityManager();
+    }
+
+
 }

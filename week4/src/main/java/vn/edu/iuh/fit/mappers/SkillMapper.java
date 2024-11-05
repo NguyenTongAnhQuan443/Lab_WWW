@@ -3,7 +3,6 @@ package vn.edu.iuh.fit.mappers;
 import org.springframework.jdbc.core.RowMapper;
 import vn.edu.iuh.fit.enums.SkillType;
 import vn.edu.iuh.fit.models.Skill;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.UUID;
